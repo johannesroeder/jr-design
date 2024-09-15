@@ -41,13 +41,13 @@ function LandingPage() {
           <Container>
             <Row>
               <Col className="ml-auto mr-auto text-center" md="8">
-                <h2 className="title">Who we are?</h2>
+                <h2 className="title">Who are we?</h2>
                 <h5 className="description">
-                  According to the National Oceanic and Atmospheric
-                  Administration, Ted, Scambos, NSIDClead scentist, puts the
-                  potentially record low maximum sea ice extent tihs year down
-                  to low ice extent in the Pacific and a late drop in ice extent
-                  in the Barents Sea.
+                  At JR Design, we craft unique, handmade wooden decorative objects like lamps, vases, and bowls, blending flowing organic shapes with modern geometric design.
+                </h5>
+                <h5 className="description">
+                  Each piece is meticulously made from locally sourced, sustainably harvested wood, ensuring that no trees are cut solely for production. <br /> <br />
+                  Our collections are created in small batches, making each design as special as the wood it’s carved from. We aim to provide beautifully crafted pieces that bring a touch of nature and artistry into any space.
                 </h5>
               </Col>
             </Row>
@@ -63,11 +63,9 @@ function LandingPage() {
                     }}
                   >
                     <p className="blockquote blockquote-info">
-                      "Over the span of the satellite record, Arctic sea ice has
-                      been declining significantly, while sea ice in the
-                      Antarctichas increased very slightly" <br></br>
+                      "I'm on a constant hunt for inspiration and perfection. Always reflecting on previous attempts I strive to make my next piece better then the last" <br></br>
                       <br></br>
-                      <small>-NOAA</small>
+                      <small>- JOHANNES</small>
                     </p>
                   </div>
                   <div
@@ -87,37 +85,18 @@ function LandingPage() {
                     }}
                   ></div>
                   <h3>
-                    So what does the new record for the lowest level of winter
-                    ice actually mean
+                    A brief history:
                   </h3>
                   <p>
-                    The Arctic Ocean freezes every winter and much of the
-                    sea-ice then thaws every summer, and that process will
-                    continue whatever happens with climate change. Even if the
-                    Arctic continues to be one of the fastest-warming regions of
-                    the world, it will always be plunged into bitterly cold
-                    polar dark every winter. And year-by-year, for all kinds of
-                    natural reasons, there’s huge variety of the state of the
-                    ice.
+                    Born in Germany, Johannes Roeder moved to Antwerp to pursue his interest in fine woodworking and instrument building.
+                    Since then, he has gathered extensive experience as a carpenter, furniture restorer, and guitar builder, among other roles.
+                    This has led him to build a diverse portfolio and a strong background in developing and creating his own designs, always striving to push his boundaries.
                   </p>
                   <p>
-                    For a start, it does not automatically follow that a record
-                    amount of ice will melt this summer. More important for
-                    determining the size of the annual thaw is the state of the
-                    weather as the midnight sun approaches and temperatures
-                    rise. But over the more than 30 years of satellite records,
-                    scientists have observed a clear pattern of decline,
-                    decade-by-decade.
+                    Through his extensive experience working with and for creative people, he has developed a keen eye and unique perspective on shape and design. As a craftsman, he loves to try new ideas and think of innovative ways to achieve them.
                   </p>
                   <p>
-                    The Arctic Ocean freezes every winter and much of the
-                    sea-ice then thaws every summer, and that process will
-                    continue whatever happens with climate change. Even if the
-                    Arctic continues to be one of the fastest-warming regions of
-                    the world, it will always be plunged into bitterly cold
-                    polar dark every winter. And year-by-year, for all kinds of
-                    natural reasons, there’s huge variety of the state of the
-                    ice.
+                    Johannes loves to work with his hands. With his attention to detail paired with more then 15 years of experience he makes sure that every piece is made to perfection.
                   </p>
                 </Col>
               </Row>
@@ -129,23 +108,18 @@ function LandingPage() {
             <h2 className="title">Here is our team</h2>
             <div className="team">
               <Row>
-                <Col md="4">
+                <Col md="6">
                   <div className="team-player">
                     <img
                       alt="..."
                       className="rounded-circle img-fluid img-raised"
-                      src={require("assets/img/avatar.jpg")}
+                      src={require("assets/img/johannes-2.jpg")}
                     ></img>
-                    <h4 className="title">Romina Hadid</h4>
-                    <p className="category text-info">Model</p>
+                    <h4 className="title">Johannes Roeder</h4>
+                    <p className="category text-info">Founder</p>
                     <p className="description">
-                      You can write here details about one of your team members.
-                      You can give more details about what they do. Feel free to
-                      add some{" "}
-                      <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                        links
-                      </a>{" "}
-                      for people to be able to follow them outside the site.
+                      Beeing creative mastermind and craftsman, he brings ideas to life with his hands.
+                      His deeply rooted passion for woodworking reflects in his attention to detail and form and shape.
                     </p>
                     <Button
                       className="btn-icon btn-round"
@@ -173,15 +147,15 @@ function LandingPage() {
                     </Button>
                   </div>
                 </Col>
-                <Col md="4">
+                <Col md="6">
                   <div className="team-player">
                     <img
                       alt="..."
                       className="rounded-circle img-fluid img-raised"
-                      src={require("assets/img/ryan.jpg")}
+                      src={require("assets/img/wim-sq.png")}
                     ></img>
-                    <h4 className="title">Ryan Tompson</h4>
-                    <p className="category text-info">Designer</p>
+                    <h4 className="title">Wim Vermoezen</h4>
+                    <p className="category text-info">Co-Founder</p>
                     <p className="description">
                       You can write here details about one of your team members.
                       You can give more details about what they do. Feel free to
@@ -206,50 +180,6 @@ function LandingPage() {
                       onClick={(e) => e.preventDefault()}
                     >
                       <i className="fab fa-linkedin"></i>
-                    </Button>
-                  </div>
-                </Col>
-                <Col md="4">
-                  <div className="team-player">
-                    <img
-                      alt="..."
-                      className="rounded-circle img-fluid img-raised"
-                      src={require("assets/img/eva.jpg")}
-                    ></img>
-                    <h4 className="title">Eva Jenner</h4>
-                    <p className="category text-info">Fashion</p>
-                    <p className="description">
-                      You can write here details about one of your team members.
-                      You can give more details about what they do. Feel free to
-                      add some{" "}
-                      <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                        links
-                      </a>{" "}
-                      for people to be able to follow them outside the site.
-                    </p>
-                    <Button
-                      className="btn-icon btn-round"
-                      color="info"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <i className="fab fa-google-plus"></i>
-                    </Button>
-                    <Button
-                      className="btn-icon btn-round"
-                      color="info"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <i className="fab fa-youtube"></i>
-                    </Button>
-                    <Button
-                      className="btn-icon btn-round"
-                      color="info"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <i className="fab fa-twitter"></i>
                     </Button>
                   </div>
                 </Col>
