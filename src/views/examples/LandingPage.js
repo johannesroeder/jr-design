@@ -118,8 +118,8 @@ function LandingPage() {
                     <h4 className="title">Johannes Roeder</h4>
                     <p className="category text-info">Founder</p>
                     <p className="description">
-                      Beeing creative mastermind and craftsman, he brings ideas to life with his hands.
-                      His deeply rooted passion for woodworking reflects in his attention to detail and form and shape.
+                      Johannes is the founder of JR Woodworks and the creative mind behind all our projects.
+                      With years of experience in all facets of woodworking, his craftsmanship ensures unique and high-quality products.
                     </p>
                     <Button
                       className="btn-icon btn-round"
@@ -157,13 +157,9 @@ function LandingPage() {
                     <h4 className="title">Wim Vermoezen</h4>
                     <p className="category text-info">Co-Founder</p>
                     <p className="description">
-                      You can write here details about one of your team members.
-                      You can give more details about what they do. Feel free to
-                      add some{" "}
-                      <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                        links
-                      </a>{" "}
-                      for people to be able to follow them outside the site.
+                      Wim focuses on development and distribution.
+                      His strategic vision and commercial flair drive growth and market expansion,
+                      ensuring our products perfectly meet customer needs.
                     </p>
                     <Button
                       className="btn-icon btn-round"
