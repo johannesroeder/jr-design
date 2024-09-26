@@ -41,7 +41,7 @@ function LandingPage() {
           <Container>
             <Row>
               <Col className="ml-auto mr-auto text-center" md="8">
-                <h2 className="title">Who are we?</h2>
+                <h2 className="title">Sustainable Design made with passion and creativity</h2>
                 <h5 className="description">
                   At JR Design, we craft unique, handmade wooden decorative objects like lamps, vases, and bowls, blending flowing organic shapes with modern geometric design.
                 </h5>
@@ -59,7 +59,7 @@ function LandingPage() {
                     className="image-container image-left"
                     style={{
                       backgroundImage:
-                        "url(" + require("assets/img/login.jpg") + ")"
+                        "url(" + require("assets/img/vase.jpg") + ")"
                     }}
                   >
                     <p className="blockquote blockquote-info">
@@ -71,8 +71,7 @@ function LandingPage() {
                   <div
                     className="image-container"
                     style={{
-                      backgroundImage:
-                        "url(" + require("assets/img/bg3.jpg") + ")"
+                      backgroundImage: "url(" + require("assets/img/johannes-side.jpg") + ")"
                     }}
                   ></div>
                 </Col>
@@ -81,7 +80,7 @@ function LandingPage() {
                     className="image-container image-right"
                     style={{
                       backgroundImage:
-                        "url(" + require("assets/img/bg1.jpg") + ")"
+                        "url(" + require("assets/img/candles.jpg") + ")"
                     }}
                   ></div>
                   <h3>
@@ -105,7 +104,7 @@ function LandingPage() {
         </div>
         <div className="section section-team text-center">
           <Container>
-            <h2 className="title">Here is our team</h2>
+            <h2 className="title">Meet the team</h2>
             <div className="team">
               <Row>
                 <Col md="6">
