@@ -1,12 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 // reactstrap components
 import {
   Collapse,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-  UncontrolledDropdown,
   NavbarBrand,
   Navbar,
   NavItem,
@@ -16,9 +12,13 @@ import {
   UncontrolledTooltip,
 } from "reactstrap";
 
-function ExamplesNavbar() {
-  const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
-  const [collapseOpen, setCollapseOpen] = React.useState(false);
+import logo from "assets/img/logo-plain-big-white.png"
+
+function LandingPageNavbar() {
+  const [navbarColor, setNavbarColor] = useState("navbar-transparent");
+  const [iconColor, setIconColor] = useState("primary");
+  const [navbarLogoVisible, setNavbarLogoVisible] = useState(false);
+  const [collapseOpen, setCollapseOpen] = useState(false);
   React.useEffect(() => {
     const updateNavbarColor = () => {
       if (
@@ -26,11 +26,15 @@ function ExamplesNavbar() {
         document.body.scrollTop > 399
       ) {
         setNavbarColor("");
+        setNavbarLogoVisible(true);
+        setIconColor("white");
       } else if (
         document.documentElement.scrollTop < 400 ||
         document.body.scrollTop < 400
       ) {
         setNavbarColor("navbar-transparent");
+        setNavbarLogoVisible(false);
+        setIconColor("primary");
       }
     };
     window.addEventListener("scroll", updateNavbarColor);
@@ -51,42 +55,9 @@ function ExamplesNavbar() {
       ) : null}
       <Navbar className={"fixed-top " + navbarColor} color="info" expand="lg">
         <Container>
-          <UncontrolledDropdown className="button-dropdown">
-            <DropdownToggle
-              caret
-              data-toggle="dropdown"
-              href="#pablo"
-              id="navbarDropdown"
-              tag="a"
-              onClick={(e) => e.preventDefault()}
-            >
-              <span className="button-bar"></span>
-              <span className="button-bar"></span>
-              <span className="button-bar"></span>
-            </DropdownToggle>
-            <DropdownMenu aria-labelledby="navbarDropdown">
-              <DropdownItem header tag="a">
-                Dropdown header
-              </DropdownItem>
-              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                Action
-              </DropdownItem>
-              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                Another action
-              </DropdownItem>
-              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                Something else here
-              </DropdownItem>
-              <DropdownItem divider></DropdownItem>
-              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                Separated link
-              </DropdownItem>
-              <DropdownItem divider></DropdownItem>
-              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                One more separated link
-              </DropdownItem>
-            </DropdownMenu>
-          </UncontrolledDropdown>
+          <NavbarBrand href="" className={navbarLogoVisible ? "" : "opacity-0"}>
+            <img src={logo} alt="Logo" style={{ height: "30px" }} />
+          </NavbarBrand>
           <div className="navbar-translate">
             <button
               className="navbar-toggler navbar-toggler"
@@ -110,10 +81,10 @@ function ExamplesNavbar() {
             <Nav navbar>
               <NavItem>
                 <NavLink
-                  href="https://www.facebook.com/CreativeTim?ref=creativetim"
+                  href=""
                   target="_blank"
                   id="facebook-tooltip">
-                  <i className="fab fa-facebook-square"></i>
+                  <i className={"fab fa-facebook-square " + iconColor}></i>
                   <p className="d-lg-none d-xl-none">Facebook</p>
                 </NavLink>
                 <UncontrolledTooltip target="#facebook-tooltip">
@@ -122,11 +93,11 @@ function ExamplesNavbar() {
               </NavItem>
               <NavItem>
                 <NavLink
-                  href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
+                  href="https://www.instagram.com/jroeder_woodworks/"
                   target="_blank"
                   id="instagram-tooltip"
                 >
-                  <i className="fab fa-instagram"></i>
+                  <i className={"fab fa-instagram " + iconColor}></i>
                   <p className="d-lg-none d-xl-none">Instagram</p>
                 </NavLink>
                 <UncontrolledTooltip target="#instagram-tooltip">
@@ -141,4 +112,4 @@ function ExamplesNavbar() {
   );
 }
 
-export default ExamplesNavbar;
+export default LandingPageNavbar;

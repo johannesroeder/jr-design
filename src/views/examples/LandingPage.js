@@ -1,5 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
+import { useForm } from "react-hook-form";
+import emailjs from '@emailjs/browser';
 
 // reactstrap components
 import {
@@ -14,13 +16,74 @@ import {
 } from "reactstrap";
 
 // core components
-import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
+import LandingPageNavbar from "components/Navbars/LandingPageNavbar.js";
 import LandingPageHeader from "components/Headers/LandingPageHeader.js";
 import DefaultFooter from "components/Footers/DefaultFooter.js";
 
 function LandingPage() {
   const [firstFocus, setFirstFocus] = React.useState(false);
   const [lastFocus, setLastFocus] = React.useState(false);
+  const [disabled, setDisabled] = React.useState(false);
+  const [alertInfo, setAlertInfo] = React.useState({
+    display: false,
+    message: '',
+    type: '',
+  });
+
+  // Shows alert message for form submission feedback
+  const toggleAlert = (message, type) => {
+    setAlertInfo({ display: true, message, type });
+
+    // Hide alert after 5 seconds
+    setTimeout(() => {
+      setAlertInfo({ display: false, message: '', type: '' });
+    }, 5000);
+  };
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = async (data) => {
+    // Destrcture data object
+    const { name, email, subject, message } = data;
+    try {
+      // Disable form while processing submission
+      setDisabled(true);
+
+      // Define template params
+      const templateParams = {
+        name,
+        email,
+        subject,
+        message,
+      };
+
+      // Use emailjs to email contact form data
+      await emailjs.send(
+        import.meta.env.VITE_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_ID,
+        templateParams,
+        import.meta.env.VITE_PUBLIC_KEY,
+      );
+
+      // Display success alert
+      toggleAlert('Form submission was successful!', 'success');
+    } catch (e) {
+      console.error(e);
+      // Display error alert
+      toggleAlert('Uh oh. Something went wrong.', 'danger');
+    } finally {
+      // Re-enable form submission
+      setDisabled(false);
+      // Reset contact form fields after submission
+      reset();
+    }
+  };
+
   useEffect(() => {
     document.body.classList.add("landing-page");
     document.body.classList.add("sidebar-collapse");
@@ -34,13 +97,13 @@ function LandingPage() {
   }, []);
   return (
     <>
-      <ExamplesNavbar />
+      <LandingPageNavbar />
       <div className="wrapper">
         <LandingPageHeader />
         <div className="section section-about-us">
           <Container>
             <Row>
-              <Col className="ml-auto mr-auto text-center" md="8">
+              <Col className="ml-auto mr-auto text-left" md="10">
                 <h2 className="title">Sustainable Design made with passion and creativity</h2>
                 <h5 className="description">
                   At JR Design, we craft unique, handmade wooden decorative objects like lamps, vases, and bowls, blending flowing organic shapes with modern geometric design.
@@ -186,65 +249,106 @@ function LandingPage() {
           <Container>
             <h2 className="title">Want to work with us?</h2>
             <p className="description">Your project is very important to us.</p>
-            <Row>
-              <Col className="text-center ml-auto mr-auto" lg="6" md="8">
-                <InputGroup
-                  className={
-                    "input-lg" + (firstFocus ? " input-group-focus" : "")
-                  }
-                >
-                  <InputGroupAddon addonType="prepend">
-                    <InputGroupText>
-                      <i className="now-ui-icons users_circle-08"></i>
-                    </InputGroupText>
-                  </InputGroupAddon>
-                  <Input
-                    placeholder="First Name..."
-                    type="text"
-                    onFocus={() => setFirstFocus(true)}
-                    onBlur={() => setFirstFocus(false)}
-                  ></Input>
-                </InputGroup>
-                <InputGroup
-                  className={
-                    "input-lg" + (lastFocus ? " input-group-focus" : "")
-                  }
-                >
-                  <InputGroupAddon addonType="prepend">
-                    <InputGroupText>
-                      <i className="now-ui-icons ui-1_email-85"></i>
-                    </InputGroupText>
-                  </InputGroupAddon>
-                  <Input
-                    placeholder="Email..."
-                    type="text"
-                    onFocus={() => setLastFocus(true)}
-                    onBlur={() => setLastFocus(false)}
-                  ></Input>
-                </InputGroup>
-                <div className="textarea-container">
-                  <Input
-                    cols="80"
-                    name="name"
-                    placeholder="Type a message..."
-                    rows="4"
-                    type="textarea"
-                  ></Input>
-                </div>
-                <div className="send-button">
-                  <Button
-                    block
-                    className="btn-round"
-                    color="info"
-                    href="#pablo"
-                    onClick={(e) => e.preventDefault()}
-                    size="lg"
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              noValidate
+            >
+              <Row>
+                <Col className="text-center ml-auto mr-auto" lg="6" md="8">
+                  <InputGroup
+                    className={
+                      "input-lg" + (firstFocus ? " input-group-focus" : "")
+                    }
                   >
-                    Send Message
-                  </Button>
-                </div>
-              </Col>
-            </Row>
+                    <InputGroupAddon addonType="prepend">
+                      <InputGroupText>
+                        <i className="now-ui-icons users_circle-08"></i>
+                      </InputGroupText>
+                    </InputGroupAddon>
+                    <Input
+                      placeholder="First Name..."
+                      type='text'
+                      name='name'
+                      {...register('name', {
+                        required: {
+                          value: true,
+                          message: 'Please enter your name',
+                        },
+                        maxLength: {
+                          value: 30,
+                          message: 'Please use 30 characters or less',
+                        },
+                      })}
+                      onFocus={() => setFirstFocus(true)}
+                      onBlur={() => setFirstFocus(false)}
+                    ></Input>
+                    {errors.name && (
+                      <span className='errorMessage'>
+                        {errors.name.message}
+                      </span>
+                    )}
+                  </InputGroup>
+                  <InputGroup
+                    className={
+                      "input-lg" + (lastFocus ? " input-group-focus" : "")
+                    }
+                  >
+                    <InputGroupAddon addonType="prepend">
+                      <InputGroupText>
+                        <i className="now-ui-icons ui-1_email-85"></i>
+                      </InputGroupText>
+                    </InputGroupAddon>
+                    <Input
+                      placeholder="Email..."
+                      type='email'
+                      name='email'
+                      {...register('email', {
+                        required: true,
+                        pattern:
+                          /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                      })}
+                      onFocus={() => setLastFocus(true)}
+                      onBlur={() => setLastFocus(false)}
+                    ></Input>
+                    {errors.email && (
+                      <span className='errorMessage'>
+                        Please enter a valid email address
+                      </span>
+                    )}
+                  </InputGroup>
+                  <div className="textarea-container">
+                    <Input
+                      cols="80"
+                      name='message'
+                      {...register('message', {
+                        required: true,
+                      })}
+                      placeholder="Type a message..."
+                      rows="4"
+                      type="textarea"
+
+                    ></Input>
+                    {errors.message && (
+                      <span className='errorMessage'>
+                        Please enter a message
+                      </span>
+                    )}
+                  </div>
+                  <div className="send-button">
+                    <Button
+                      block
+                      className="btn-round"
+                      color="info"
+                      href="#pablo"
+                      onClick={(e) => e.preventDefault()}
+                      size="lg"
+                    >
+                      Send Message
+                    </Button>
+                  </div>
+                </Col>
+              </Row>
+            </form>
           </Container>
         </div>
         <DefaultFooter />

@@ -145,9 +145,9 @@
         }
 
         &.menu-on-left .navbar-collapse{
-            right: auto;
-            left: 0;
-            @include transform-translate-x(-300px);
+            left: auto;
+            right: 0;
+            @include transform-translate-x(-600px);
         }
 
         [class*="navbar-expand-"]{

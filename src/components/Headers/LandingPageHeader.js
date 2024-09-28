@@ -43,7 +43,7 @@ function LandingPageHeader() {
                 }}
               ></div>
             </div>
-            <h3 className="title">Design & Craftsmanship</h3>
+            <h3 className="title"><span className="primary">D</span>esign & <span className="primary">C</span>raftsmanship</h3>
           </Container>
         </div>
       </div>

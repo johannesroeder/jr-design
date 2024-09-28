@@ -1,6 +1,6 @@
 @mixin navbar-responsive() {
     &.menu-on-left .navbar-translate {
-      flex-direction: row-reverse;
+      flex-direction: row;
     }
 
     .navbar{

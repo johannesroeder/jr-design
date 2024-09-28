@@ -61,7 +61,16 @@
                 top: 3px;
                 text-align: center;
                 width: 21px;
+
+                .white {
+                    color: white;
+                }
+
+                .primary {
+                    color: $info-color;
+                }
             }
+
 
             i.now-ui-icons{
                 top: 4px;
@@ -105,8 +114,15 @@
         padding-top: $padding-base-vertical;
         padding-bottom: $padding-base-vertical;
         line-height: $line-height-nav-link;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        justify-items: center;
     }
 
+    .opacity-0 {
+        opacity: 0;
+    }
     .navbar-toggler{
         width: 37px;
         height: 27px;
@@ -115,7 +131,7 @@
 
         &.navbar-toggler-left{
             position: relative;
-            left: 0;
+            right: 0;
             padding-left: 0;
         }
 
@@ -197,4 +213,8 @@
 
 .bg-white{
     background-color: $white-color !important;
+}
+
+.primary {
+    color: $info-color
 }
