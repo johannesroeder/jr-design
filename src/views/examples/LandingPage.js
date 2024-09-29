@@ -148,6 +148,7 @@ function LandingPage() {
                   ></div>
                   <h3>
                     A brief history:
+
                   </h3>
                   <p>
                     Born in Germany, Johannes Roeder moved to Antwerp to pursue his interest in fine woodworking and instrument building.
