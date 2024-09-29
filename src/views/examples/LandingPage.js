@@ -256,6 +256,9 @@ function LandingPage() {
             >
               <Row>
                 <Col className="text-center ml-auto mr-auto" lg="6" md="8">
+                  {alertInfo && (
+                    <span>alertInfo</span>
+                  )}
                   <InputGroup
                     className={
                       "input-lg" + (firstFocus ? " input-group-focus" : "")
@@ -300,6 +303,7 @@ function LandingPage() {
                       </InputGroupText>
                     </InputGroupAddon>
                     <Input
+                      disabled={{ disabled }}
                       placeholder="Email..."
                       type='email'
                       name='email'
