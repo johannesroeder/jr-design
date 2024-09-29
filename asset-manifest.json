@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/jr-design/static/css/main.17cc1ad4.css",
-    "main.js": "/jr-design/static/js/main.2ec59811.js",
-    "static/media/johannes-side.jpg": "/jr-design/static/media/johannes-side.3e51d60b32f8f3c33980.jpg",
-    "static/media/johannes-2.jpg": "/jr-design/static/media/johannes-2.37582d64a1d6ead467e1.jpg",
-    "static/media/wim-sq.png": "/jr-design/static/media/wim-sq.a03cebeee7d579df398d.png",
-    "static/media/me-turning-banner.jpg": "/jr-design/static/media/me-turning-banner.2eb2d64ae3b12e7ddfcb.jpg",
-    "static/media/vase.jpg": "/jr-design/static/media/vase.5b611931ccb8544f2c71.jpg",
-    "static/media/candles.jpg": "/jr-design/static/media/candles.4797738c5cfe4005e24a.jpg",
-    "static/media/nucleo-outline.eot": "/jr-design/static/media/nucleo-outline.56814a6b7240045e1494.eot",
-    "static/media/nucleo-outline.ttf": "/jr-design/static/media/nucleo-outline.1102ed9b2d16dccdec05.ttf",
-    "static/media/nucleo-outline.woff": "/jr-design/static/media/nucleo-outline.1a1036e643f97457ec5f.woff",
-    "static/media/nucleo-outline.woff2": "/jr-design/static/media/nucleo-outline.802141dd0dcc63b21cbb.woff2",
-    "index.html": "/jr-design/index.html"
+    "main.css": "/static/css/main.69459b05.css",
+    "main.js": "/static/js/main.d38ccfca.js",
+    "static/media/johannes-side.jpg": "/static/media/johannes-side.3e51d60b32f8f3c33980.jpg",
+    "static/media/johannes-2.jpg": "/static/media/johannes-2.37582d64a1d6ead467e1.jpg",
+    "static/media/wim-sq.png": "/static/media/wim-sq.a03cebeee7d579df398d.png",
+    "static/media/me-turning-banner.jpg": "/static/media/me-turning-banner.2eb2d64ae3b12e7ddfcb.jpg",
+    "static/media/vase.jpg": "/static/media/vase.5b611931ccb8544f2c71.jpg",
+    "static/media/candles.jpg": "/static/media/candles.4797738c5cfe4005e24a.jpg",
+    "static/media/nucleo-outline.eot": "/static/media/nucleo-outline.56814a6b7240045e1494.eot",
+    "static/media/nucleo-outline.ttf": "/static/media/nucleo-outline.1102ed9b2d16dccdec05.ttf",
+    "static/media/nucleo-outline.woff": "/static/media/nucleo-outline.1a1036e643f97457ec5f.woff",
+    "static/media/nucleo-outline.woff2": "/static/media/nucleo-outline.802141dd0dcc63b21cbb.woff2",
+    "index.html": "/index.html"
   },
   "entrypoints": [
-    "static/css/main.17cc1ad4.css",
-    "static/js/main.2ec59811.js"
+    "static/css/main.69459b05.css",
+    "static/js/main.d38ccfca.js"
   ]
 }
