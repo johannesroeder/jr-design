@@ -58,10 +58,11 @@
 
         .navbar-translate{
           width: 100%;
-          position: relative;
+          position: absolute;
+          right: 2vw;
           display: flex;
           -ms-flex-pack: justify!important;
-          justify-content: space-between!important;
+          justify-content: flex-end !important;
           -ms-flex-align: center;
           align-items: center;
           @include transform-translate-x(0px);

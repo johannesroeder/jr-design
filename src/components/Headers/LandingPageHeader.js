@@ -34,17 +34,22 @@ function LandingPageHeader() {
 
         <div className="content-center">
 
-          <Container>
+          <div>
             <div className="text-center">
-              <div
-                className="page-header-logo"
-                style={{
-                  backgroundImage: "url(" + require("assets/img/logo-plain-big-white.png") + ")"
-                }}
-              ></div>
+              <h4 className="title">Atelier</h4>
+              <div class="header-logo-container">
+                <p>Johannes</p>
+                <div
+                  className="page-header-logo"
+                  style={{
+                    backgroundImage: "url(" + require("assets/img/logo-plain-big-white.png") + ")"
+                  }}
+                ></div>
+                <p>Roeder</p>
+              </div>
             </div>
-            <h3 className="title"><span className="primary">D</span>esign & <span className="primary">C</span>raftsmanship</h3>
-          </Container>
+            <h2 className="title"><span className="primary">D</span>esign & <span className="primary">C</span>raftsmanship</h2>
+          </div>
         </div>
       </div>
     </>

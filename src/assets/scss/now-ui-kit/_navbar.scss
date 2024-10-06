@@ -99,6 +99,18 @@
         }
     }
 
+    .navbar-container {
+       
+
+        .logo-middle {
+            position: absolute;
+            // left: 50%;
+            // right: 50%;
+            // top: auto;
+            // bottom: auto;
+        }
+    }
+
     .logo-container{
         width: 27px;
         height: 27px;
@@ -128,6 +140,9 @@
         height: 27px;
         outline: 0;
         cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
 
         &.navbar-toggler-left{
             position: relative;
@@ -137,6 +152,7 @@
 
         .navbar-toggler-bar.middle-bar{
           width: 17px;
+          right: 0;
           transition: width .2s linear;
         }
 

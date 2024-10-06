@@ -63,12 +63,12 @@ function LandingPage() {
       };
 
       // Use emailjs to email contact form data
-      await emailjs.send(
-        import.meta.env.VITE_SERVICE_ID,
-        import.meta.env.VITE_TEMPLATE_ID,
-        templateParams,
-        import.meta.env.VITE_PUBLIC_KEY,
-      );
+      // await emailjs.send(
+      //   import.meta.env.VITE_SERVICE_ID,
+      //   import.meta.env.VITE_TEMPLATE_ID,
+      //   templateParams,
+      //   import.meta.env.VITE_PUBLIC_KEY,
+      // );
 
       // Display success alert
       toggleAlert('Form submission was successful!', 'success');
@@ -256,8 +256,8 @@ function LandingPage() {
             >
               <Row>
                 <Col className="text-center ml-auto mr-auto" lg="6" md="8">
-                  {alertInfo && (
-                    <span>alertInfo</span>
+                  {alertInfo.disabled && (
+                    <span>alertInfo.message</span>
                   )}
                   <InputGroup
                     className={

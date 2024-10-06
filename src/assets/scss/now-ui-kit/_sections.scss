@@ -59,7 +59,6 @@
     }
 
     .page-header-logo {
-        // position: absolute;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
@@ -81,8 +80,20 @@
       text-align: center;
       color: #FFFFFF;
       padding: 0 15px;
-      width: 100%;
+    //   width: 100%;
       max-width: 880px;
+
+      .header-logo-container {
+        display: flex;
+        // background-color: red;
+        align-items:end;
+        justify-content: space-around;
+        flex-direction: row;
+        
+        p {
+            opacity: 0.4;
+        }
+      }
 
     }
 

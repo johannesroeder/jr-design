@@ -54,8 +54,8 @@ function LandingPageNavbar() {
         />
       ) : null}
       <Navbar className={"fixed-top " + navbarColor} color="info" expand="lg">
-        <Container>
-          <NavbarBrand href="" className={navbarLogoVisible ? "" : "opacity-0"}>
+        <Container class="navbar-container">
+          <NavbarBrand href="" class="logo-middle" className={navbarLogoVisible ? "" : "opacity-0"}>
             <img src={logo} alt="Logo" style={{ height: "30px" }} />
           </NavbarBrand>
           <div className="navbar-translate">
