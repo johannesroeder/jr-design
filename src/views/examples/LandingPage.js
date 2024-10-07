@@ -1,7 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import emailjs from '@emailjs/browser';
 
 // reactstrap components
 import {
@@ -55,12 +54,12 @@ function LandingPage() {
       setDisabled(true);
 
       // Define template params
-      const templateParams = {
-        name,
-        email,
-        subject,
-        message,
-      };
+      // const templateParams = {
+      //   name,
+      //   email,
+      //   subject,
+      //   message,
+      // };
 
       // Use emailjs to email contact form data
       // await emailjs.send(
