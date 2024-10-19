@@ -76,7 +76,11 @@ function LandingPage() {
             // Re-enable form submission
             setDisabled(false);
             // Reset contact form fields after submission
-            reset();
+            reset({
+                from_name: '',
+                user_email: '',
+                message: ''
+            });
         }
     };
 
@@ -282,6 +286,7 @@ function LandingPage() {
                                                 <Input
                                                     placeholder="First Name..."
                                                     type="text"
+                                                    disabled={disabled}
                                                     {...field}
                                                     onFocus={() => setFirstFocus(true)}
                                                     onBlur={() => setFirstFocus(false)}
@@ -310,6 +315,7 @@ function LandingPage() {
                                                 <Input
                                                     placeholder="Email..."
                                                     type="email"
+                                                    disabled={disabled}
                                                     {...field}
                                                     onFocus={() => setLastFocus(true)}
                                                     onBlur={() => setLastFocus(false)}
@@ -334,6 +340,7 @@ function LandingPage() {
                                                 <Input
                                                     cols="80"
                                                     placeholder="Type a message..."
+                                                    disabled={disabled}
                                                     rows="4"
                                                     type="textarea"
                                                     {...field}
