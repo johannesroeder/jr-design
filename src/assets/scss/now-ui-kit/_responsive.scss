@@ -113,6 +113,11 @@
   .navbar-collapse:not(.has-image) {
     background: transparent !important;
 }
+    .navbar-collapse{
+        position: absolute !important;
+        top: 0;
+        right: 0;
+    }
     .burger-menu{
         @include navbar-collapse();
 

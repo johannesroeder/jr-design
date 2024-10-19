@@ -32,7 +32,7 @@ function LandingPageHeader() {
           <div>
             <div className="text-center">
               <h4 className="title">Atelier</h4>
-              <div class="header-logo-container">
+              <div className="header-logo-container">
                 <p>Johannes</p>
                 <div
                   className="page-header-logo"

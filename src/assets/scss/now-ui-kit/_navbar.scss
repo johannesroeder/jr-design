@@ -100,14 +100,18 @@
     }
 
     .navbar-container {
-       
-
+        position: relative;
         .logo-middle {
             position: absolute;
+            top: 0;
             // left: 50%;
             // right: 50%;
             // top: auto;
             // bottom: auto;
+        }
+
+        .navbar-translate {
+            position: absolute;
         }
     }
 

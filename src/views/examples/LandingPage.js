@@ -1,12 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
+import emailjs from '@emailjs/browser';
 
 // reactstrap components
 import {
   Button,
   Input,
-  InputGroupAddon,
   InputGroupText,
   InputGroup,
   Container,
@@ -20,10 +20,10 @@ import LandingPageHeader from "components/Headers/LandingPageHeader.js";
 import DefaultFooter from "components/Footers/DefaultFooter.js";
 
 function LandingPage() {
-  const [firstFocus, setFirstFocus] = React.useState(false);
-  const [lastFocus, setLastFocus] = React.useState(false);
-  const [disabled, setDisabled] = React.useState(false);
-  const [alertInfo, setAlertInfo] = React.useState({
+  const [firstFocus, setFirstFocus] = useState(false);
+  const [lastFocus, setLastFocus] = useState(false);
+  const [disabled, setDisabled] = useState(false);
+  const [alertInfo, setAlertInfo] = useState({
     display: false,
     message: '',
     type: '',
@@ -48,26 +48,34 @@ function LandingPage() {
 
   const onSubmit = async (data) => {
     // Destrcture data object
+    const key = process.env.REACT_APP_EMAIL_PUBLIC_KEY;
+    console.log(key);
+    console.log('testestestest');
     const { name, email, subject, message } = data;
     try {
       // Disable form while processing submission
       setDisabled(true);
 
       // Define template params
-      // const templateParams = {
-      //   name,
-      //   email,
-      //   subject,
-      //   message,
-      // };
+      const templateParams = {
+        from_name: 'johannes test name',
+        user_email: 'joroeder2588@gmail.com',
+        subject: 'test subject',
+        message: 'test message',
+      };
+
+      console.log(process.env.REACT_APP_EMAIL_SERVICE_ID);
+      console.log(process.env.REACT_APP_EMAIL_TEMPLATE_ID);
+      console.log(process.env.REACT_APP_EMAIL_PUBLIC_KEY);
+
 
       // Use emailjs to email contact form data
-      // await emailjs.send(
-      //   import.meta.env.VITE_SERVICE_ID,
-      //   import.meta.env.VITE_TEMPLATE_ID,
-      //   templateParams,
-      //   import.meta.env.VITE_PUBLIC_KEY,
-      // );
+      await emailjs.send(
+        process.env.REACT_APP_EMAIL_SERVICE_ID,
+        process.env.REACT_APP_EMAIL_TEMPLATE_ID,
+        templateParams,
+        process.env.REACT_APP_EMAIL_PUBLIC_KEY
+      );
 
       // Display success alert
       toggleAlert('Form submission was successful!', 'success');
@@ -121,7 +129,7 @@ function LandingPage() {
                     className="image-container image-left"
                     style={{
                       backgroundImage:
-                        "url(" + require("assets/img/vase.jpg") + ")"
+                        "url(" + require("assets/img/candles-box.jpg") + ")"
                     }}
                   >
                     <p className="blockquote blockquote-info">
@@ -263,16 +271,11 @@ function LandingPage() {
                       "input-lg" + (firstFocus ? " input-group-focus" : "")
                     }
                   >
-                    <InputGroupAddon addonType="prepend">
-                      <InputGroupText>
-                        <i className="now-ui-icons users_circle-08"></i>
-                      </InputGroupText>
-                    </InputGroupAddon>
                     <Input
                       placeholder="First Name..."
                       type='text'
-                      name='name'
-                      {...register('name', {
+                      name='from_name'
+                      {...register('from_name', {
                         required: {
                           value: true,
                           message: 'Please enter your name',
@@ -296,17 +299,11 @@ function LandingPage() {
                       "input-lg" + (lastFocus ? " input-group-focus" : "")
                     }
                   >
-                    <InputGroupAddon addonType="prepend">
-                      <InputGroupText>
-                        <i className="now-ui-icons ui-1_email-85"></i>
-                      </InputGroupText>
-                    </InputGroupAddon>
                     <Input
-                      disabled={{ disabled }}
                       placeholder="Email..."
                       type='email'
-                      name='email'
-                      {...register('email', {
+                      name='user_email'
+                      {...register('user_email', {
                         required: true,
                         pattern:
                           /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
@@ -339,16 +336,19 @@ function LandingPage() {
                     )}
                   </div>
                   <div className="send-button">
+                    {/* <Input type='submit'> */}
                     <Button
                       block
                       className="btn-round"
                       color="info"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
+                      // href="#pablo"
+                      onClick={(e) => onSubmit(e)}
                       size="lg"
+                    // type="submit"
                     >
                       Send Message
                     </Button>
+                    {/* </Input> */}
                   </div>
                 </Col>
               </Row>
