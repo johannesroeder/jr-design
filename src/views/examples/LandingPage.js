@@ -40,7 +40,6 @@ function LandingPage() {
 
     const {
         control,
-        register,
         handleSubmit,
         reset,
         formState: {errors},
