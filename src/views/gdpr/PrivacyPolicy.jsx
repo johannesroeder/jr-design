@@ -78,7 +78,7 @@ function LandingPage() {
                     <h2>How Long We Keep Your Data</h2>
 
                     <p>
-                        We retain the information you provide for up to [specify timeframe, e.g., 6 months] after
+                        We retain the information you provide for up to 6 months after
                         responding to your inquiry. After this period, your data will be securely deleted.
                     </p>
                     <h2>Your Rights</h2>
@@ -104,7 +104,7 @@ function LandingPage() {
                         </li>
                     </ol>
                     <p>
-                        To exercise these rights, contact us at [Your Email Address for Privacy Inquiries].
+                        To exercise these rights, contact us at atelier@johannesroeder.com.
                     </p>
 
                     <h2>Sharing Your Data</h2>
@@ -131,7 +131,7 @@ function LandingPage() {
                         Privacy Policy.
                     </p>
                     <p>
-                        For any questions or concerns about your data, please contact us at [Your Email Address].
+                        For any questions or concerns about your data, please contact us at atelier@johannesroeder.com.
                     </p>
                 </Container>
             </div>
