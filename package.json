@@ -6,6 +6,7 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "ajv": "^8.17.1",
+    "assets": "^3.0.1",
     "moment": "2.29.4",
     "nouislider": "15.4.0",
     "react": ">=16.8.0",

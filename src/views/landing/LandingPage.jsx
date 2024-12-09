@@ -10,6 +10,8 @@ import LandingPageNavbar from "../../components/Navbars/LandingPageNavbar.jsx";
 import LandingPageHeader from "../../components/Headers/LandingPageHeader";
 import DefaultFooter from "../../components/Footers/DefaultFooter.jsx";
 import {useNavigate} from "react-router-dom";
+import Images from "../index-sections/Images";
+import CarouselSection from "../index-sections/Carousel";
 
 function LandingPage() {
     const [firstFocus, setFirstFocus] = useState(false);
