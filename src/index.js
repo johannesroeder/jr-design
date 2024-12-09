@@ -25,15 +25,17 @@ import "assets/scss/now-ui-kit.scss?v=1.5.0";
 import "assets/demo/demo.css?v=1.5.0";
 import "assets/demo/nucleo-icons-page-styles.css?v=1.5.0";
 // pages for this kit
-import LandingPage from "views/examples/LandingPage.js";
+import LandingPage from "./views/landing/LandingPage.jsx";
+import PrivacyPolicy from "./views/gdpr/PrivacyPolicy";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<LandingPage />} />
-      <Route path="*" element={<Navigate to="/" replace />} />
-    </Routes>
-  </BrowserRouter>
+    <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<LandingPage/>}/>
+            <Route path="*" element={<Navigate to="/" replace/>}/>
+            <Route path="/privacy" element={<PrivacyPolicy/>}/>
+        </Routes>
+    </BrowserRouter>
 );

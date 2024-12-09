@@ -22,7 +22,7 @@ $black-hr:                   #444444 !default;
 
 $light-gray:                 #E3E3E3 !default;
 $medium-gray:                #DDDDDD !default;
-$dark-gray:                  #9A9A9A !default;
+$dark-gray: #232323 !default;
 
 $opacity-gray-3:             rgba(222,222,222, .3) !default;
 $opacity-gray-5:             rgba(222,222,222, .5) !default;
@@ -57,6 +57,7 @@ $success-color-opacity:      rgba(24, 206, 15, .3) !default;
 $success-color-alert:        rgba(24, 206, 15, .8) !default;
 
 $info-color:                 #7F8162 !default;
+$info-text-color:            #2a2b20 !default;
 $info-states-color:          lighten($info-color, 6%) !default;
 $info-color-opacity:         rgba(44, 168, 255, .3) !default;
 $info-color-alert:           rgba(44, 168, 255, .8) !default;
