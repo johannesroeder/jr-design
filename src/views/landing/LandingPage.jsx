@@ -10,8 +10,6 @@ import LandingPageNavbar from "../../components/Navbars/LandingPageNavbar.jsx";
 import LandingPageHeader from "../../components/Headers/LandingPageHeader";
 import DefaultFooter from "../../components/Footers/DefaultFooter.jsx";
 import {useNavigate} from "react-router-dom";
-import Images from "../index-sections/Images";
-import CarouselSection from "../index-sections/Carousel";
 
 function LandingPage() {
     const [firstFocus, setFirstFocus] = useState(false);
@@ -82,9 +80,17 @@ function LandingPage() {
         document.documentElement.classList.remove("nav-open");
         window.scrollTo(0, 0);
         document.body.scrollTop = 0;
+        const handleScroll = () => {
+            const parallax = document.querySelector('.section-story-bg');
+            const scrolled = window.pageYOffset * 2;
+            // parallax.style.backgroundPositionY = `-${scrolled / 10}px`; // Adjust the multiplier for desired speed
+        };
+
+        window.addEventListener('scroll', handleScroll);
         return function cleanup() {
             document.body.classList.remove("landing-page");
             document.body.classList.remove("sidebar-collapse");
+            window.removeEventListener('scroll', handleScroll);
         };
     }, []);
     return (<>
@@ -109,41 +115,37 @@ function LandingPage() {
                             </h5>
                         </Col>
                     </Row>
-                    <div className="separator separator-primary"></div>
-                    <div className="section-story-overview">
-                        <Row>
-                            <Col md="6">
-                                <div
-                                    className="image-container image-left"
-                                    style={{
-                                        backgroundImage: "url(" + require("../../assets/img/candles-box.jpg") + ")"
-                                    }}
-                                >
-                                    <p className="blockquote blockquote-info">
-                                        "I'm on a constant hunt for inspiration and perfection. Always reflecting on
-                                        previous attempts I strive to make my next piece better then the
-                                        last" <br></br>
-                                        <br></br>
-                                        <small>- JOHANNES</small>
-                                    </p>
-                                </div>
-                                <div
-                                    className="image-container"
-                                    style={{
-                                        backgroundImage: "url(" + require("../../assets/img/johannes-side.jpg") + ")"
-                                    }}
-                                ></div>
-                            </Col>
-                            <Col md="5">
-                                <div
-                                    className="image-container image-right"
-                                    style={{
-                                        backgroundImage: "url(" + require("../../assets/img/candles.jpg") + ")"
-                                    }}
-                                ></div>
+                </Container>
+                <div className="separator separator-primary"></div>
+                <div className="section-story-overview">
+                    {/*<div className="section-story-bg"></div>*/}
+                        <Row className="section-story-0 m-1">
+
+                            {/*<Col md="6">*/}
+                            {/*    <div*/}
+                            {/*        className="image-container image-left"*/}
+                            {/*        style={{*/}
+                            {/*            backgroundImage: "url(" + require("../../assets/img/candles-box.jpg") + ")"*/}
+                            {/*        }}*/}
+                            {/*    >*/}
+                            {/*        <p className="blockquote blockquote-info">*/}
+                            {/*            "I'm on a constant hunt for inspiration and perfection. Always reflecting on*/}
+                            {/*            previous attempts I strive to make my next piece better then the*/}
+                            {/*            last" <br></br>*/}
+                            {/*            <br></br>*/}
+                            {/*            <small>- JOHANNES</small>*/}
+                            {/*        </p>*/}
+                            {/*    </div>*/}
+                            {/*    <div*/}
+                            {/*        className="image-container"*/}
+                            {/*        style={{*/}
+                            {/*            backgroundImage: "url(" + require("../../assets/img/johannes-side.jpg") + ")"*/}
+                            {/*        }}*/}
+                            {/*    ></div>*/}
+                            {/*</Col>*/}
+                            <Col md={4} className="section-story-text">
                                 <h3>
                                     A brief history:
-
                                 </h3>
                                 <p>
                                     Born in Germany, Johannes Roeder moved to Antwerp to pursue his interest in fine
@@ -153,20 +155,34 @@ function LandingPage() {
                                     This has led him to build a diverse portfolio and a strong background in
                                     developing and creating his own designs, always striving to push his boundaries.
                                 </p>
-                                <p>
-                                    Through his extensive experience working with and for creative people, he has
-                                    developed a keen eye and unique perspective on shape and design. As a craftsman,
-                                    he loves to try new ideas and think of innovative ways to achieve them.
-                                </p>
-                                <p>
-                                    Johannes loves to work with his hands. With his attention to detail paired with
-                                    more then 15 years of experience he makes sure that every piece is made to
-                                    perfection.
-                                </p>
+                            </Col>
+                            <Col md="6" className="section-story-bg bg-center bg-contain">
                             </Col>
                         </Row>
-                    </div>
-                </Container>
+                    <Row className="section-story-1 bg-center bg-cover">
+                        <Col md={6} className="section-story-1-left bg-center bg-cover">
+                                    {/*<p className="blockquote blockquote-info">*/}
+                                    {/*    "I'm on a constant hunt for inspiration and perfection. Always reflecting on*/}
+                                    {/*    previous attempts I strive to make my next piece better then the*/}
+                                    {/*    last" <br></br>*/}
+                                    {/*    <br></br>*/}
+                                    {/*    <small>- JOHANNES</small>*/}
+                                    {/*</p>*/}
+                        </Col>
+                        <Col md={6} className="section-story-1-right bg-center bg-cover">
+                            <p>
+                                Through his extensive experience working with and for creative people, he has
+                                developed a keen eye and unique perspective on shape and design. As a craftsman,
+                                he loves to try new ideas and think of innovative ways to achieve them.
+                            </p>
+                            <p>
+                                Johannes loves to work with his hands. With his attention to detail paired with
+                                more then 15 years of experience he makes sure that every piece is made to
+                                perfection.
+                            </p>
+                        </Col>
+                    </Row>
+                </div>
             </div>
             <div className="section section-team text-center">
                 <Container>
