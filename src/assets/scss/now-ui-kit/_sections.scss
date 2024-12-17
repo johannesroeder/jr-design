@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden;
+}
+
 .section {
   padding: 70px 0;
   position: relative;
@@ -82,12 +86,10 @@
     text-align: center;
     color: #FFFFFF;
     padding: 0 15px;
-    //   width: 100%;
     max-width: 880px;
 
     .header-logo-container {
       display: flex;
-      // background-color: red;
       align-items: end;
       justify-content: space-around;
       flex-direction: row;
@@ -144,8 +146,24 @@
 .section-story-overview {
   margin: 100px 0;
 
+  .section-story-text {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  }
+
+  .section-story-text.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
   .bg-center {
     background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .bg-left {
+    background-position: left;
     background-repeat: no-repeat;
   }
 
@@ -162,7 +180,7 @@
   }
 
   .section-story-bg {
-    height: 50vh;
+    height: 100vh;
     z-index: 0;
     background-image: url('../../img/hang-lamp1.png');
   }
@@ -176,13 +194,12 @@
 
     .section-story-1-left {
       background-image: url('../../img/johannes-side.jpg');
-      height: 50vh;
-
+      height: 100vh;
     }
 
     .section-story-1-right {
       background-image: url('../../img/box-closeup.jpg');
-      height: 50vh;
+      height: 100vh;
       align-content: end;
     }
 

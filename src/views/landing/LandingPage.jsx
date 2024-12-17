@@ -80,17 +80,30 @@ function LandingPage() {
         document.documentElement.classList.remove("nav-open");
         window.scrollTo(0, 0);
         document.body.scrollTop = 0;
-        const handleScroll = () => {
-            const parallax = document.querySelector('.section-story-bg');
-            const scrolled = window.pageYOffset * 2;
-            // parallax.style.backgroundPositionY = `-${scrolled / 10}px`; // Adjust the multiplier for desired speed
-        };
+        // const handleScroll = () => {
+        //     const parallax = document.querySelector('.section-story-bg');
+        //     const scrolled = window.pageYOffset * 2;
+        //     // parallax.style.backgroundPositionY = `-${scrolled / 10}px`; // Adjust the multiplier for desired speed
+        // };
 
-        window.addEventListener('scroll', handleScroll);
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        const sectionStoryText = document.querySelector('.section-story-text');
+        if (sectionStoryText) {
+            observer.observe(sectionStoryText);
+        }
+
+        // window.addEventListener('scroll', handleScroll);
         return function cleanup() {
             document.body.classList.remove("landing-page");
             document.body.classList.remove("sidebar-collapse");
-            window.removeEventListener('scroll', handleScroll);
+            // window.removeEventListener('scroll', handleScroll);
         };
     }, []);
     return (<>
@@ -119,57 +132,41 @@ function LandingPage() {
                 <div className="separator separator-primary"></div>
                 <div className="section-story-overview">
                     {/*<div className="section-story-bg"></div>*/}
-                        <Row className="section-story-0 m-1">
-
-                            {/*<Col md="6">*/}
-                            {/*    <div*/}
-                            {/*        className="image-container image-left"*/}
-                            {/*        style={{*/}
-                            {/*            backgroundImage: "url(" + require("../../assets/img/candles-box.jpg") + ")"*/}
-                            {/*        }}*/}
-                            {/*    >*/}
-                            {/*        <p className="blockquote blockquote-info">*/}
-                            {/*            "I'm on a constant hunt for inspiration and perfection. Always reflecting on*/}
-                            {/*            previous attempts I strive to make my next piece better then the*/}
-                            {/*            last" <br></br>*/}
-                            {/*            <br></br>*/}
-                            {/*            <small>- JOHANNES</small>*/}
-                            {/*        </p>*/}
-                            {/*    </div>*/}
-                            {/*    <div*/}
-                            {/*        className="image-container"*/}
-                            {/*        style={{*/}
-                            {/*            backgroundImage: "url(" + require("../../assets/img/johannes-side.jpg") + ")"*/}
-                            {/*        }}*/}
-                            {/*    ></div>*/}
-                            {/*</Col>*/}
-                            <Col md={4} className="section-story-text">
-                                <h3>
-                                    A brief history:
-                                </h3>
-                                <p>
-                                    Born in Germany, Johannes Roeder moved to Antwerp to pursue his interest in fine
-                                    woodworking and instrument building.
-                                    Since then, he has gathered extensive experience as a carpenter, furniture
-                                    restorer, and guitar builder, among other roles.
-                                    This has led him to build a diverse portfolio and a strong background in
-                                    developing and creating his own designs, always striving to push his boundaries.
-                                </p>
-                            </Col>
-                            <Col md="6" className="section-story-bg bg-center bg-contain">
-                            </Col>
-                        </Row>
-                    <Row className="section-story-1 bg-center bg-cover">
-                        <Col md={6} className="section-story-1-left bg-center bg-cover">
-                                    {/*<p className="blockquote blockquote-info">*/}
-                                    {/*    "I'm on a constant hunt for inspiration and perfection. Always reflecting on*/}
-                                    {/*    previous attempts I strive to make my next piece better then the*/}
-                                    {/*    last" <br></br>*/}
-                                    {/*    <br></br>*/}
-                                    {/*    <small>- JOHANNES</small>*/}
-                                    {/*</p>*/}
+                    <Row>
+                        <Col className="section-story-bg bg-center bg-contain">
                         </Col>
-                        <Col md={6} className="section-story-1-right bg-center bg-cover">
+                    </Row>
+                    <Container>
+
+                    <Row className="section-story-0 m-1">
+                        <Col md={7} className="section-story-text">
+                            <h3>
+                                A brief history:
+                            </h3>
+                            <p>
+                                Born in Germany, Johannes Roeder moved to Antwerp to pursue his interest in fine
+                                woodworking and instrument building.
+                                Since then, he has gathered extensive experience as a carpenter, furniture
+                                restorer, and guitar builder, among other roles.
+                                This has led him to build a diverse portfolio and a strong background in
+                                developing and creating his own designs, always striving to push his boundaries.
+                            </p>
+                        </Col>
+
+                    </Row>
+                    </Container>
+
+                    <Row className="section-story-1 bg-center bg-cover">
+                        <Col lg={7} className="section-story-1-left bg-center bg-cover">
+                            {/*<p className="blockquote blockquote-info">*/}
+                            {/*    "I'm on a constant hunt for inspiration and perfection. Always reflecting on*/}
+                            {/*    previous attempts I strive to make my next piece better then the*/}
+                            {/*    last" <br></br>*/}
+                            {/*    <br></br>*/}
+                            {/*    <small>- JOHANNES</small>*/}
+                            {/*</p>*/}
+                        </Col>
+                        <Col lg={5} className="section-story-1-right bg-center bg-cover">
                             <p>
                                 Through his extensive experience working with and for creative people, he has
                                 developed a keen eye and unique perspective on shape and design. As a craftsman,
