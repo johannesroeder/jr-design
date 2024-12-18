@@ -133,7 +133,7 @@ function LandingPage() {
                 <div className="section-story-overview">
                     <Row>
                         <Col className="section-story-bg bg-center bg-contain" style={{
-                            backgroundImage: "url(" + require("assets/img/hang-lamp1.png") + ")"
+                            backgroundImage: "url(/img/hang-lamp1.png)"
                         }}>
                         </Col>
                     </Row>
@@ -159,7 +159,7 @@ function LandingPage() {
 
                     <Row className="section-story-1 bg-center bg-cover">
                         <Col lg={7} className="section-story-1-left bg-center bg-cover" style={{
-                            backgroundImage: "url(" + require("assets/img/johannes-side.jpg") + ")"
+                            backgroundImage: "url(/img/johannes-side.jpg)"
                         }}>
                             {/*<p className="blockquote blockquote-info">*/}
                             {/*    "I'm on a constant hunt for inspiration and perfection. Always reflecting on*/}
@@ -170,7 +170,7 @@ function LandingPage() {
                             {/*</p>*/}
                         </Col>
                         <Col lg={5} className="section-story-1-right bg-center bg-cover" style={{
-                            backgroundImage: "url(" + require("assets/img/box-closeup.jpg") + ")"
+                            backgroundImage: "url(/img/box-closeup.jpg)"
                         }}>
                             <p>
                                 Through his extensive experience working with and for creative people, he has
