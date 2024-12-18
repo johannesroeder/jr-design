@@ -182,7 +182,7 @@ body {
   .section-story-bg {
     height: 100vh;
     z-index: 0;
-    background-image: url('../../img/hang-lamp1.png');
+    //background-image: url('../../img/hang-lamp1.png');
   }
 
   .section-story-text {
@@ -193,12 +193,12 @@ body {
     z-index: 0;
 
     .section-story-1-left {
-      background-image: url('../../img/johannes-side.jpg');
+      //background-image: url('../../img/johannes-side.jpg');
       height: 100vh;
     }
 
     .section-story-1-right {
-      background-image: url('../../img/box-closeup.jpg');
+      //background-image: url('../../img/box-closeup.jpg');
       height: 100vh;
       align-content: end;
     }

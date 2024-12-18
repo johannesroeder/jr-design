@@ -131,9 +131,10 @@ function LandingPage() {
                 </Container>
                 <div className="separator separator-primary"></div>
                 <div className="section-story-overview">
-                    {/*<div className="section-story-bg"></div>*/}
                     <Row>
-                        <Col className="section-story-bg bg-center bg-contain">
+                        <Col className="section-story-bg bg-center bg-contain" style={{
+                            backgroundImage: "url(" + require("../../assets/img/hang-lamp1.png") + ")"
+                        }}>
                         </Col>
                     </Row>
                     <Container>
@@ -157,7 +158,9 @@ function LandingPage() {
                     </Container>
 
                     <Row className="section-story-1 bg-center bg-cover">
-                        <Col lg={7} className="section-story-1-left bg-center bg-cover">
+                        <Col lg={7} className="section-story-1-left bg-center bg-cover" style={{
+                            backgroundImage: "url(" + require("../../assets/img/johannes-side.jpg") + ")"
+                        }}>
                             {/*<p className="blockquote blockquote-info">*/}
                             {/*    "I'm on a constant hunt for inspiration and perfection. Always reflecting on*/}
                             {/*    previous attempts I strive to make my next piece better then the*/}
@@ -166,7 +169,9 @@ function LandingPage() {
                             {/*    <small>- JOHANNES</small>*/}
                             {/*</p>*/}
                         </Col>
-                        <Col lg={5} className="section-story-1-right bg-center bg-cover">
+                        <Col lg={5} className="section-story-1-right bg-center bg-cover" style={{
+                            backgroundImage: "url(" + require("../../assets/img/box-closeup.jpg") + ")"
+                        }}>
                             <p>
                                 Through his extensive experience working with and for creative people, he has
                                 developed a keen eye and unique perspective on shape and design. As a craftsman,
@@ -189,7 +194,7 @@ function LandingPage() {
                             <Col md="6">
                                 <div className="team-player">
                                     <img
-                                        alt="..."
+                                        alt="Johannes looking at the camera"
                                         className="rounded-circle img-fluid img-raised"
                                         src={require("../../assets/img/johannes-2.jpg")}
                                     ></img>
