@@ -69,18 +69,6 @@ function LandingPageNavbar() {
                         navbar
                     >
                         <Nav navbar>
-                            {/*<NavItem>*/}
-                            {/*  <NavLink*/}
-                            {/*    href=""*/}
-                            {/*    target="_blank"*/}
-                            {/*    id="facebook-tooltip">*/}
-                            {/*    <i className={"fab fa-facebook-square " + iconColor}></i>*/}
-                            {/*    <p className="d-lg-none d-xl-none">Facebook</p>*/}
-                            {/*  </NavLink>*/}
-                            {/*  <UncontrolledTooltip target="#facebook-tooltip">*/}
-                            {/*    Like us on Facebook*/}
-                            {/*  </UncontrolledTooltip>*/}
-                            {/*</NavItem>*/}
                             <NavItem>
                                 <NavLink
                                     href="https://www.instagram.com/jroeder_woodworks/"
