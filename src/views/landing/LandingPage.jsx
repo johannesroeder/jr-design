@@ -94,9 +94,17 @@ function LandingPage() {
             });
         });
 
-        const sectionStoryText = document.querySelector('.section-story-text');
+        const sectionStoryText = document.querySelector('#section-story-text-1');
+        const sectionStoryText2 = document.querySelector('#section-story-text-2');
+        const sectionStoryText3 = document.querySelector('#section-story-text-3');
         if (sectionStoryText) {
             observer.observe(sectionStoryText);
+        }
+        if (sectionStoryText2) {
+            observer.observe(sectionStoryText2);
+        }
+        if (sectionStoryText3) {
+            observer.observe(sectionStoryText3);
         }
 
         // window.addEventListener('scroll', handleScroll);
@@ -139,28 +147,35 @@ function LandingPage() {
                     </Row>
                     <Container>
 
-                    <Row className="section-story-0 m-1">
-                        <Col md={7} className="section-story-text">
-                            <h3>
-                                A brief history:
-                            </h3>
-                            <p>
-                                Born in Germany, Johannes Roeder moved to Antwerp to pursue his interest in fine
-                                woodworking and instrument building.
-                                Since then, he has gathered extensive experience as a carpenter, furniture
-                                restorer, and guitar builder, among other roles.
-                                This has led him to build a diverse portfolio and a strong background in
-                                developing and creating his own designs, always striving to push his boundaries.
-                            </p>
-                        </Col>
+                        <Row className="section-story-0 m-1">
+                            <Col md={7} id="section-story-text-1">
+                                <h3>
+                                    A brief history:
+                                </h3>
+                                <p>
+                                    Born in Germany, Johannes Roeder moved to Antwerp to pursue his interest in fine
+                                    woodworking and instrument building.
+                                    Since then, he has gathered extensive experience as a carpenter, furniture
+                                    restorer, and guitar builder, among other roles.
+                                    This has led him to build a diverse portfolio and a strong background in
+                                    developing and creating his own designs, always striving to push his boundaries.
+                                </p>
+                            </Col>
 
-                    </Row>
+                        </Row>
                     </Container>
 
                     <Row className="section-story-1 bg-center bg-cover">
                         <Col lg={7} className="section-story-1-left bg-center bg-cover" style={{
                             backgroundImage: "url(/img/johannes-side.jpg)"
                         }}>
+                            <Col md={{span: 5, offset: 5}} className="text-right" id="section-story-text-2">
+                                <p>
+                                    Through his extensive experience working with and for creative people, he has
+                                    developed a keen eye and unique perspective on shape and design. As a craftsman,
+                                    he loves to try new ideas and think of innovative ways to achieve them.
+                                </p>
+                            </Col>
                             {/*<p className="blockquote blockquote-info">*/}
                             {/*    "I'm on a constant hunt for inspiration and perfection. Always reflecting on*/}
                             {/*    previous attempts I strive to make my next piece better then the*/}
@@ -169,19 +184,18 @@ function LandingPage() {
                             {/*    <small>- JOHANNES</small>*/}
                             {/*</p>*/}
                         </Col>
-                        <Col lg={5} className="section-story-1-right bg-center bg-cover" style={{
+                        <Col lg={5} className="section-story-1-right bg-center bg-cover justify-content-end" style={{
                             backgroundImage: "url(/img/box-closeup.jpg)"
                         }}>
-                            <p>
-                                Through his extensive experience working with and for creative people, he has
-                                developed a keen eye and unique perspective on shape and design. As a craftsman,
-                                he loves to try new ideas and think of innovative ways to achieve them.
-                            </p>
-                            <p>
-                                Johannes loves to work with his hands. With his attention to detail paired with
-                                more then 15 years of experience he makes sure that every piece is made to
-                                perfection.
-                            </p>
+                            <Row className="align-items-end h-100">
+                                <Col md={8} id="section-story-text-3">
+                                    <p>
+                                        Johannes loves to work with his hands. With his attention to detail paired with
+                                        more then 15 years of experience he makes sure that every piece is made to
+                                        perfection.
+                                    </p>
+                                </Col>
+                            </Row>
                         </Col>
                     </Row>
                 </div>
@@ -271,7 +285,7 @@ function LandingPage() {
             <div className="section section-contact-us text-center">
                 <Container>
                     <h2 className="title">Want to work with us?</h2>
-                    <p className="description">Your project is very important to us.</p>
+                    {/*<p className="description">Your project is very important to us.</p>*/}
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <Row>
                             <Col className="text-center ml-auto mr-auto" lg="6" md="8">
