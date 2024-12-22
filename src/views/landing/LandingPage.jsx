@@ -208,7 +208,7 @@ function LandingPage() {
                             <Col md="6">
                                 <div className="team-player">
                                     <img
-                                        alt="Johannes looking at the camera"
+                                        alt="Johannes, founder and maker of JR Design, looking at the camera"
                                         className="rounded-circle img-fluid img-raised"
                                         src={require("../../assets/img/johannes-2.jpg")}
                                     ></img>
@@ -249,7 +249,7 @@ function LandingPage() {
                             <Col md="6">
                                 <div className="team-player">
                                     <img
-                                        alt="..."
+                                        alt="Wim, strategic and commercial expert at JR Design, looking at the camera"
                                         className="rounded-circle img-fluid img-raised"
                                         src={require("../../assets/img/wim-sq.png")}
                                     ></img>
@@ -300,16 +300,15 @@ function LandingPage() {
                                             },
                                         }}
                                         render={({field}) => (<Input
-                                            placeholder="First Name..."
+                                            placeholder={errors.from_name ? errors.from_name.message : "First name..."}
                                             type="text"
+                                            invalid={errors.from_name}
                                             disabled={disabled}
                                             {...field}
                                             onFocus={() => setFirstFocus(true)}
                                             onBlur={() => setFirstFocus(false)}
                                         />)}
                                     />
-                                    {errors.from_name && (
-                                        <span className='errorMessage'>{errors.from_name.message}</span>)}
                                 </InputGroup>
 
                                 <InputGroup className={"input-lg" + (lastFocus ? " input-group-focus" : "")}>
@@ -323,16 +322,15 @@ function LandingPage() {
                                             },
                                         }}
                                         render={({field}) => (<Input
-                                            placeholder="Email..."
+                                            placeholder={errors.user_email ? errors.user_email.message : "Email..."}
                                             type="email"
+                                            invalid={errors.user_email}
                                             disabled={disabled}
                                             {...field}
                                             onFocus={() => setLastFocus(true)}
                                             onBlur={() => setLastFocus(false)}
                                         />)}
                                     />
-                                    {errors.user_email && (
-                                        <span className='errorMessage'>{errors.user_email.message}</span>)}
                                 </InputGroup>
 
                                 <div className="textarea-container">
@@ -352,7 +350,7 @@ function LandingPage() {
                                         />)}
                                     />
                                     {errors.message && (
-                                        <span className='errorMessage'>{errors.message.message}</span>)}
+                                        <span className='error-message'>{errors.message.message}</span>)}
                                 </div>
                                 <p className="subtext">We value your privacy. Your name and email address will only be
                                     used to respond to your inquiry.
@@ -360,7 +358,7 @@ function LandingPage() {
                                                                              onClick={goToPrivacyPolicy}>Privacy
                                         Policy</a>.</p>
                                 <label>
-                                    <input
+                                    <Input
                                         type="checkbox"
                                         checked={isPrivacyChecked}
                                         onChange={handleCheckboxChange}
