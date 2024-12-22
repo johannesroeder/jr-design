@@ -80,11 +80,11 @@ function LandingPage() {
         document.documentElement.classList.remove("nav-open");
         window.scrollTo(0, 0);
         document.body.scrollTop = 0;
-        // const handleScroll = () => {
-        //     const parallax = document.querySelector('.section-story-bg');
-        //     const scrolled = window.pageYOffset * 2;
-        //     // parallax.style.backgroundPositionY = `-${scrolled / 10}px`; // Adjust the multiplier for desired speed
-        // };
+        const handleScroll = () => {
+            const parallax = document.querySelector('.section-story-bg');
+            const scrolled = window.pageYOffset * 2;
+            parallax.style.backgroundPositionY = `-${scrolled/12}px`; // Adjust the multiplier for desired speed
+        };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -107,11 +107,11 @@ function LandingPage() {
             observer.observe(sectionStoryText3);
         }
 
-        // window.addEventListener('scroll', handleScroll);
+        window.addEventListener('scroll', handleScroll);
         return function cleanup() {
             document.body.classList.remove("landing-page");
             document.body.classList.remove("sidebar-collapse");
-            // window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('scroll', handleScroll);
         };
     }, []);
     return (<>
