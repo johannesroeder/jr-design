@@ -208,7 +208,7 @@ function LandingPage() {
                             <Col md="6">
                                 <div className="team-player">
                                     <img
-                                        alt="Johannes, founder and maker of JR Design, looking at the camera"
+                                        alt="Johannes, founder and maker of Atelier JR, looking at the camera"
                                         className="rounded-circle img-fluid img-raised"
                                         src={require("../../assets/img/johannes-2.jpg")}
                                     ></img>
@@ -251,7 +251,7 @@ function LandingPage() {
                                     <img
                                         alt="Wim, strategic and commercial expert at JR Design, looking at the camera"
                                         className="rounded-circle img-fluid img-raised"
-                                        src={require("../../assets/img/wim-sq.png")}
+                                        src={require("../../assets/img/wim-sq-bnw.png")}
                                     ></img>
                                     <h4 className="title">Wim Vermoezen</h4>
                                     <p className="category text-info">Co-Founder</p>
