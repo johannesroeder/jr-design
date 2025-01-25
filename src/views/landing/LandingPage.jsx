@@ -124,7 +124,7 @@ function LandingPage() {
                         <Col className="ml-auto mr-auto text-left" md="10">
                             <h2 className="title">Sustainable Design made with passion and creativity</h2>
                             <h5 className="description">
-                                At JR Design, we craft unique, handmade wooden decorative objects like lamps, vases,
+                                At Atelier JR, we craft unique, handmade wooden decorative objects like lamps, vases,
                                 and bowls, blending flowing organic shapes with modern geometric design.
                             </h5>
                             <h5 className="description">

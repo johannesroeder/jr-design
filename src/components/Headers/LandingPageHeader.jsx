@@ -33,14 +33,14 @@ function LandingPageHeader() {
             <div className="text-center">
               <h4 className="title">Atelier</h4>
               <div className="header-logo-container">
-                <p>Johannes</p>
+                {/*<p>Johannes</p>*/}
                 <div
                   className="page-header-logo"
                   style={{
                     backgroundImage: "url(" + require("assets/img/logo-plain-big-white.png") + ")"
                   }}
                 ></div>
-                <p>Roeder</p>
+                {/*<p>Roeder</p>*/}
               </div>
             </div>
             <h2 className="title"><span className="primary">D</span>esign & <span className="primary">C</span>raftsmanship</h2>
