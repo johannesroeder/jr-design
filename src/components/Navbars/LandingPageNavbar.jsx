@@ -71,7 +71,7 @@ function LandingPageNavbar() {
                         <Nav navbar>
                             <NavItem>
                                 <NavLink
-                                    href="https://www.instagram.com/jroeder_woodworks/"
+                                    href="https://www.instagram.com/atelier_jr/"
                                     target="_blank"
                                     id="instagram-tooltip"
                                     aria-label="Visit our instagram page to get to know us better"
