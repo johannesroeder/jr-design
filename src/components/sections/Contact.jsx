@@ -1,0 +1,38 @@
+import React from "react";
+import AnimatedSection from "../ui/AnimatedSection";
+
+export default function Contact() {
+  return (
+    <section id="contact" className="bg-cream py-24 md:py-32 px-6">
+      <div className="max-w-6xl mx-auto">
+        <AnimatedSection className="max-w-xl">
+          <p className="text-wood text-xs tracking-[0.3em] uppercase mb-4">Get in touch</p>
+          <h2 className="font-serif text-dark text-4xl md:text-5xl font-normal leading-tight mb-6">
+            Let's talk
+          </h2>
+          <div className="w-12 h-px bg-wood mb-8" />
+          <p className="text-dark/60 leading-relaxed mb-10">
+            Interested in a piece, a commission, or just want to say hello? Reach out directly — I'd love to hear from you.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a
+              href="mailto:atelier@johannesroeder.com"
+              className="inline-block px-8 py-4 bg-dark text-cream text-xs tracking-widest uppercase text-center transition-colors duration-300 hover:bg-wood"
+            >
+              Send an email
+            </a>
+            <a
+              href="https://www.instagram.com/atelier_jr/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-4 border border-dark text-dark text-xs tracking-widest uppercase text-center transition-colors duration-300 hover:border-wood hover:text-wood"
+            >
+              Instagram
+            </a>
+          </div>
+        </AnimatedSection>
+      </div>
+    </section>
+  );
+}

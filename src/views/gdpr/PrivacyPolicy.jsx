@@ -1,143 +1,123 @@
-import React, {useEffect} from "react";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import DefaultFooter from "../../components/Footers/DefaultFooter";
 
-// reactstrap components
-import {Container} from "reactstrap";
+export default function PrivacyPolicy() {
+  const navigate = useNavigate();
 
-// core components
-import LandingPageNavbar from "../../components/Navbars/LandingPageNavbar.jsx";
-import LandingPageHeader from "../../components/Headers/LandingPageHeader";
-import DefaultFooter from "../../components/Footers/DefaultFooter.jsx";
+  return (
+    <div className="min-h-screen bg-cream flex flex-col">
+      {/* Minimal header */}
+      <nav className="bg-dark py-4 px-6 flex items-center justify-between">
+        <button
+          onClick={() => navigate("/")}
+          className="font-serif text-cream text-lg tracking-widest bg-transparent border-0 cursor-pointer"
+        >
+          Atelier JR
+        </button>
+        <button
+          onClick={() => navigate("/")}
+          className="text-cream/60 hover:text-cream text-xs tracking-widest uppercase transition-colors duration-200 bg-transparent border-0 cursor-pointer font-sans"
+        >
+          ← Back
+        </button>
+      </nav>
 
-function LandingPage() {
-    useEffect(() => {
-        document.body.classList.add("landing-page");
-        document.body.classList.add("sidebar-collapse");
-        document.documentElement.classList.remove("nav-open");
-        window.scrollTo(0, 0);
-        document.body.scrollTop = 0;
-        return function cleanup() {
-            document.body.classList.remove("landing-page");
-            document.body.classList.remove("sidebar-collapse");
-        };
-    }, []);
-    return (<>
-        <LandingPageNavbar/>
-        <div className="wrapper">
-            <LandingPageHeader/>
-            <div className="section">
-                <Container>
+      <main className="flex-1 max-w-3xl mx-auto w-full px-6 py-16">
+        <h1 className="font-serif text-dark text-4xl md:text-5xl font-normal mb-3">Privacy Policy</h1>
+        <p className="text-dark/40 text-sm mb-12">Last updated: 9 December 2024</p>
 
-                    <h1>Privacy Policy</h1>
+        <p className="text-dark/70 leading-relaxed mb-8">
+          At JR Design, we value your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, and protect the information you provide through our website's contact form.
+        </p>
 
-                    <small>Last updated: 9 December 2024</small>
+        {[
+          {
+            title: "Who We Are",
+            content: (
+              <ul className="list-none text-dark/70 leading-relaxed space-y-1">
+                <li>JR Design</li>
+                <li>Lodewijk Van Berckenlaan 366, 2140 Borgerhout</li>
+                <li><a href="mailto:atelier@johannesroeder.com" className="underline hover:text-wood">atelier@johannesroeder.com</a></li>
+                <li>https://www.johannesroeder.com</li>
+              </ul>
+            ),
+          },
+          {
+            title: "What Data We Collect",
+            content: (
+              <>
+                <p className="text-dark/70 leading-relaxed mb-4">When you use our contact form, we collect:</p>
+                <ul className="list-disc list-inside text-dark/70 leading-relaxed space-y-1">
+                  <li>First Name — to personalise our response.</li>
+                  <li>Email Address — to contact you regarding your inquiry.</li>
+                  <li>Message — the details of your inquiry.</li>
+                </ul>
+                <p className="text-dark/70 leading-relaxed mt-4">We do not collect any additional data or track users outside the scope of this form.</p>
+              </>
+            ),
+          },
+          {
+            title: "Why We Collect Your Data",
+            content: <p className="text-dark/70 leading-relaxed">We use the information you provide solely to respond to your inquiry. We will not use your data for any other purpose, such as marketing, without your explicit consent.</p>,
+          },
+          {
+            title: "How We Protect Your Data",
+            content: (
+              <ul className="list-disc list-inside text-dark/70 leading-relaxed space-y-1">
+                <li>Encrypting data transmission using HTTPS.</li>
+                <li>Storing data securely on our servers.</li>
+                <li>Limiting access to your data only to those who need it to handle your inquiry.</li>
+              </ul>
+            ),
+          },
+          {
+            title: "How Long We Keep Your Data",
+            content: <p className="text-dark/70 leading-relaxed">We retain the information you provide for up to 6 months after responding to your inquiry. After this period, your data will be securely deleted.</p>,
+          },
+          {
+            title: "Your Rights",
+            content: (
+              <>
+                <p className="text-dark/70 leading-relaxed mb-4">Under GDPR, you have the right to:</p>
+                <ol className="list-decimal list-inside text-dark/70 leading-relaxed space-y-1">
+                  <li>Access — request a copy of the data we hold about you.</li>
+                  <li>Correction — ask us to correct inaccurate or incomplete data.</li>
+                  <li>Deletion — request that we delete your data.</li>
+                  <li>Objection — object to how your data is being used.</li>
+                  <li>Withdrawal of Consent — withdraw consent at any time.</li>
+                </ol>
+                <p className="text-dark/70 leading-relaxed mt-4">To exercise these rights, contact us at <a href="mailto:atelier@johannesroeder.com" className="underline hover:text-wood">atelier@johannesroeder.com</a>.</p>
+              </>
+            ),
+          },
+          {
+            title: "Sharing Your Data",
+            content: <p className="text-dark/70 leading-relaxed">We do not share, sell, or transfer your personal data to third parties unless required to do so by law.</p>,
+          },
+          {
+            title: "Cookies",
+            content: <p className="text-dark/70 leading-relaxed">Our website does not currently use cookies to track or store user data. If this changes in the future, we will update this Privacy Policy and request your consent.</p>,
+          },
+          {
+            title: "Changes to This Policy",
+            content: (
+              <>
+                <p className="text-dark/70 leading-relaxed mb-4">We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated "Last Updated" date.</p>
+                <p className="text-dark/70 leading-relaxed">By submitting the contact form on this website, you confirm that you have read and understood this Privacy Policy.</p>
+              </>
+            ),
+          },
+        ].map(({ title, content }) => (
+          <section key={title} className="mb-10">
+            <h2 className="font-serif text-dark text-2xl font-normal mb-4">{title}</h2>
+            <div className="w-8 h-px bg-wood mb-5" />
+            {content}
+          </section>
+        ))}
+      </main>
 
-                    <p>At JR Design, we value your privacy and are committed to protecting your personal data. This
-                        Privacy Policy explains how we collect, use, and protect the information you provide through our
-                        website’s contact form.</p>
-
-                    <h2>Who We Are</h2>
-                    <ul>
-                        <li>JR Design</li>
-                        <li>Lodewijk Van Berckenlaan 366, 2140 Borgerhout</li>
-                        <li>atelier@johannesroeder.com</li>
-                        <li>https://www.johannesroeder.com</li>
-                    </ul>
-
-                    <h2>What Data We Collect</h2>
-
-                    <p>When you use our contact form, we collect the following information:</p>
-                    <ul>
-                        <li>First Name: To personalize our response to your inquiry.</li>
-                        <li>Email Address: To contact you regarding your inquiry.</li>
-                        <li>Message: The details of your inquiry to help us provide an appropriate response.</li>
-                    </ul>
-
-                    <p>We do not collect any additional data or track users outside the scope of this form.</p>
-
-                    <h2>Why We Collect Your Data</h2>
-                    <p>
-                        We use the information you provide solely to respond to your inquiry. We will not use your data
-                        for any other purpose, such as marketing, without your explicit consent.
-                    </p>
-
-                    <h2>How We Protect Your Data</h2>
-
-                    <p>
-
-                        We take appropriate technical and organizational measures to ensure your personal data is
-                        secure.
-                        This includes:
-                    </p>
-                    <ul>
-                        <li>Encrypting data transmission using HTTPS.</li>
-                        <li>Storing data securely on our servers.</li>
-                        <li>Limiting access to your data only to those who need it to handle your inquiry.</li>
-                    </ul>
-
-
-                    <h2>How Long We Keep Your Data</h2>
-
-                    <p>
-                        We retain the information you provide for up to 6 months after
-                        responding to your inquiry. After this period, your data will be securely deleted.
-                    </p>
-                    <h2>Your Rights</h2>
-                    <p>
-                        Under GDPR, you have the following rights regarding your personal data:
-                    </p>
-                    <ol>
-                        <li>
-                            Access: You can request a copy of the data we hold about you.
-                        </li>
-                        <li>
-                            Correction: You can ask us to correct inaccurate or incomplete data.
-                        </li>
-                        <li>
-                            Deletion: You can request that we delete your data.
-                        </li>
-                        <li>
-                            Objection: You can object to how your data is being used.
-                        </li>
-                        <li>
-                            Withdrawal of Consent: If you have given consent for us to process your data, you can
-                            withdraw it at any time.
-                        </li>
-                    </ol>
-                    <p>
-                        To exercise these rights, contact us at atelier@johannesroeder.com.
-                    </p>
-
-                    <h2>Sharing Your Data</h2>
-                    <p>
-                        We do not share, sell, or transfer your personal data to third parties unless required to do so
-                        by
-                        law.
-                    </p>
-
-                    <h2>Cookies</h2>
-                    <p>
-                        Our website does not currently use cookies to track or store user data. If this changes in the
-                        future, we will update this Privacy Policy and request your consent before implementing cookies.
-                    </p>
-                    <h2>Changes to This Policy</h2>
-                    <p>
-                        We may update this Privacy Policy from time to time. Any changes will be posted on this page
-                        with an
-                        updated “Last Updated” date. We encourage you to review this page periodically to stay informed.
-                    </p>
-                    <p>
-                        By submitting the contact form on this website, you confirm that you have read and understood
-                        this
-                        Privacy Policy.
-                    </p>
-                    <p>
-                        For any questions or concerns about your data, please contact us at atelier@johannesroeder.com.
-                    </p>
-                </Container>
-            </div>
-            <DefaultFooter/>
-        </div>
-    </>);
+      <DefaultFooter />
+    </div>
+  );
 }
-
-export default LandingPage;

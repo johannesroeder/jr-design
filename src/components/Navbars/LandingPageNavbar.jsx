@@ -1,94 +1,99 @@
-import React, {useState} from "react";
-// reactstrap components
-import {Collapse, Container, Nav, Navbar, NavbarBrand, NavItem, NavLink, UncontrolledTooltip,} from "reactstrap";
+import React, { useState, useEffect } from "react";
 
-import logo from "assets/img/logo-plain-big-white.png"
+export default function LandingPageNavbar() {
+  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-function LandingPageNavbar() {
-    const [navbarColor, setNavbarColor] = useState("navbar-transparent");
-    const [iconColor, setIconColor] = useState("primary");
-    const [navbarLogoVisible, setNavbarLogoVisible] = useState(false);
-    const [collapseOpen, setCollapseOpen] = useState(false);
-    React.useEffect(() => {
-        const updateNavbarColor = () => {
-            if (
-                document.documentElement.scrollTop > 399 ||
-                document.body.scrollTop > 399
-            ) {
-                setNavbarColor("");
-                setNavbarLogoVisible(true);
-                setIconColor("white");
-            } else if (
-                document.documentElement.scrollTop < 400 ||
-                document.body.scrollTop < 400
-            ) {
-                setNavbarColor("navbar-transparent");
-                setNavbarLogoVisible(false);
-                setIconColor("primary");
-            }
-        };
-        window.addEventListener("scroll", updateNavbarColor);
-        return function cleanup() {
-            window.removeEventListener("scroll", updateNavbarColor);
-        };
-    });
-    return (
-        <>
-            {collapseOpen ? (
-                <div
-                    id="bodyClick"
-                    onClick={() => {
-                        document.documentElement.classList.toggle("nav-open");
-                        setCollapseOpen(false);
-                    }}
-                />
-            ) : null}
-            <Navbar className={"fixed-top " + navbarColor} color="info" expand="lg">
-                <Container className="navbar-container">
-                    <NavbarBrand href="/" className={navbarLogoVisible ? "logo-middle" : "logo-middle opacity-0"}>
-                        <img src={logo} alt="Logo" style={{height: "30px"}}/>
-                    </NavbarBrand>
-                    <div className="navbar-translate">
-                        <button
-                            className="navbar-toggler navbar-toggler"
-                            onClick={() => {
-                                document.documentElement.classList.toggle("nav-open");
-                                setCollapseOpen(!collapseOpen);
-                            }}
-                            aria-expanded={collapseOpen}
-                            type="button"
-                        >
-                            <span className="navbar-toggler-bar top-bar"></span>
-                            <span className="navbar-toggler-bar middle-bar"></span>
-                            <span className="navbar-toggler-bar bottom-bar"></span>
-                        </button>
-                    </div>
-                    <Collapse
-                        className="justify-content-end"
-                        isOpen={collapseOpen}
-                        navbar
-                    >
-                        <Nav navbar>
-                            <NavItem>
-                                <NavLink
-                                    href="https://www.instagram.com/atelier_jr/"
-                                    target="_blank"
-                                    id="instagram-tooltip"
-                                    aria-label="Visit our instagram page to get to know us better"
-                                >
-                                    <i className={"fab fa-instagram " + iconColor}></i>
-                                    <p className="d-lg-none d-xl-none">Instagram</p>
-                                </NavLink>
-                                <UncontrolledTooltip target="#instagram-tooltip">
-                                    Follow us on Instagram
-                                </UncontrolledTooltip>
-                            </NavItem>
-                        </Nav>
-                    </Collapse>
-                </Container>
-            </Navbar>
-        </>
-    );
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 60);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollTo = (id) => {
+    setMenuOpen(false);
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled ? "bg-dark shadow-md py-3" : "bg-transparent py-5"
+      }`}
+    >
+      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
+        {/* Logo — only visible when scrolled */}
+        <span
+          className={`font-serif text-cream text-lg tracking-widest transition-opacity duration-500 ${
+            scrolled ? "opacity-100" : "opacity-0 pointer-events-none"
+          }`}
+        >
+          Atelier JR
+        </span>
+
+        {/* Desktop nav */}
+        <ul className="hidden md:flex gap-8 list-none m-0 p-0 ml-auto">
+          {[["about", "About"], ["work", "Work"], ["craft", "Craft"], ["contact", "Contact"]].map(([id, label]) => (
+            <li key={id}>
+              <button
+                onClick={() => scrollTo(id)}
+                className="text-cream/80 hover:text-cream text-xs tracking-widest uppercase transition-colors duration-200 bg-transparent border-0 cursor-pointer font-sans"
+              >
+                {label}
+              </button>
+            </li>
+          ))}
+          <li>
+            <a
+              href="https://www.instagram.com/atelier_jr/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-cream/80 hover:text-cream text-xs tracking-widest uppercase transition-colors duration-200"
+              aria-label="Instagram"
+            >
+              Instagram
+            </a>
+          </li>
+        </ul>
+
+        {/* Mobile hamburger */}
+        <button
+          className="md:hidden flex flex-col gap-1.5 p-2 bg-transparent border-0 cursor-pointer ml-auto"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span className={`block w-6 h-0.5 bg-cream transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+          <span className={`block w-6 h-0.5 bg-cream transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`} />
+          <span className={`block w-6 h-0.5 bg-cream transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
+        </button>
+      </div>
+
+      {/* Mobile menu */}
+      <div className={`md:hidden overflow-hidden transition-all duration-300 ${menuOpen ? "max-h-64" : "max-h-0"}`}>
+        <ul className="flex flex-col gap-0 list-none m-0 px-6 pb-4 bg-dark">
+          {[["about", "About"], ["work", "Work"], ["craft", "Craft"], ["contact", "Contact"]].map(([id, label]) => (
+            <li key={id} className="border-b border-cream/10">
+              <button
+                onClick={() => scrollTo(id)}
+                className="w-full text-left text-cream/80 hover:text-cream py-3 text-xs tracking-widest uppercase bg-transparent border-0 cursor-pointer font-sans"
+              >
+                {label}
+              </button>
+            </li>
+          ))}
+          <li className="pt-3">
+            <a
+              href="https://www.instagram.com/atelier_jr/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-cream/80 hover:text-cream text-xs tracking-widest uppercase"
+            >
+              Instagram
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  );
 }
-
-export default LandingPageNavbar;
