@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import { useLanguage } from "../../context/LanguageContext";
 
 export default function Hero() {
   const bgRef = useRef(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,18 +18,14 @@ export default function Hero() {
 
   return (
     <section className="relative h-screen overflow-hidden">
-      {/* Parallax background */}
       <div
         ref={bgRef}
         className="absolute inset-0 bg-cover bg-center scale-110"
         style={{ backgroundImage: "url(/img/me-turning-banner.jpg)" }}
         aria-hidden="true"
       />
-
-      {/* Dark overlay */}
       <div className="absolute inset-0 bg-dark/50" aria-hidden="true" />
 
-      {/* Content */}
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
         <motion.img
           src="/img/logo-plain-big-white.png"
@@ -51,18 +49,17 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.6 }}
         >
-          Design &amp; Craftsmanship
+          {t.hero.tagline}
         </motion.p>
       </div>
 
-      {/* Scroll hint */}
       <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 0.8 }}
       >
-        <span className="text-cream/50 text-xs tracking-widest uppercase">Scroll</span>
+        <span className="text-cream/50 text-xs tracking-widest uppercase">{t.hero.scroll}</span>
         <div className="w-px h-10 bg-cream/30" />
       </motion.div>
     </section>

@@ -1,8 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useLanguage } from "../../context/LanguageContext";
 
 export default function DefaultFooter() {
   const navigate = useNavigate();
+  const { t } = useLanguage();
   const year = new Date().getFullYear();
 
   return (
@@ -17,7 +19,7 @@ export default function DefaultFooter() {
             onClick={() => navigate("/privacy")}
             className="text-cream/40 hover:text-cream/70 text-xs tracking-wide transition-colors duration-200 bg-transparent border-0 cursor-pointer font-sans"
           >
-            Privacy Policy
+            {t.footer.privacy}
           </button>
           <a
             href="https://www.instagram.com/atelier_jr/"
@@ -26,7 +28,7 @@ export default function DefaultFooter() {
             className="text-cream/40 hover:text-cream/70 text-xs tracking-wide transition-colors duration-200"
             aria-label="Atelier JR on Instagram"
           >
-            Instagram
+            {t.footer.instagram}
           </a>
         </div>
       </div>

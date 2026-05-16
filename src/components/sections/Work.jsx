@@ -1,15 +1,6 @@
-import React from "react";
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
-
-const images = [
-  { src: "/img/hang-lamp1.png", alt: "Handmade wooden hanging lamp by Atelier JR", className: "row-span-2" },
-  { src: "/img/vase.jpg", alt: "Turned wooden vase by Atelier JR" },
-  { src: "/img/candles.jpg", alt: "Wooden candle holders by Atelier JR" },
-  { src: "/img/box-closeup.jpg", alt: "Handcrafted wooden box, detail shot by Atelier JR" },
-  { src: "/img/candles-box.jpg", alt: "Wooden box with candles by Atelier JR" },
-];
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
+import { useLanguage } from "../../context/LanguageContext";
 
 function WorkImage({ src, alt, className = "", index }) {
   const ref = useRef(null);
@@ -34,15 +25,24 @@ function WorkImage({ src, alt, className = "", index }) {
 }
 
 export default function Work() {
+  const { t } = useLanguage();
+
+  const images = [
+    { src: "/img/hang-lamp1.png", alt: t.work.alt.lamp, className: "row-span-2" },
+    { src: "/img/vase.jpg",        alt: t.work.alt.vase },
+    { src: "/img/candles.jpg",     alt: t.work.alt.candles },
+    { src: "/img/box-closeup.jpg", alt: t.work.alt.box },
+    { src: "/img/candles-box.jpg", alt: t.work.alt.candlesBox },
+  ];
+
   return (
     <section id="work" className="bg-sand/20 py-24 md:py-32 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="mb-14">
-          <p className="text-wood text-xs tracking-[0.3em] uppercase mb-3">Portfolio</p>
-          <h2 className="font-serif text-dark text-4xl md:text-5xl font-normal">The Work</h2>
+          <p className="text-wood text-xs tracking-[0.3em] uppercase mb-3">{t.work.label}</p>
+          <h2 className="font-serif text-dark text-4xl md:text-5xl font-normal">{t.work.title}</h2>
         </div>
 
-        {/* Asymmetric grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 grid-rows-3 gap-3 md:gap-4 auto-rows-[240px]">
           {images.map((img, i) => (
             <WorkImage key={img.src} {...img} index={i} />
