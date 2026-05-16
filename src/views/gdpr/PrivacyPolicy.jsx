@@ -36,8 +36,10 @@ export default function PrivacyPolicy() {
           <h2 className="font-serif text-dark text-2xl font-normal mb-4">{s.whoWeAre.title}</h2>
           <div className="w-8 h-px bg-wood mb-5" />
           <ul className="list-none text-dark/70 leading-relaxed space-y-1">
-            <li>JR Design</li>
-            <li>Lodewijk Van Berckenlaan 366, 2140 Borgerhout</li>
+            <li>Atelier JR</li>
+            <li>Schransstraat 119</li>
+            <li>2530 Boechout</li>
+            <li>BTW BE0555800496</li>
             <li><a href="mailto:atelier@johannesroeder.com" className="underline hover:text-wood">atelier@johannesroeder.com</a></li>
             <li>https://www.johannesroeder.com</li>
           </ul>
