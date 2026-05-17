@@ -4,9 +4,12 @@ import Hero from "../../components/sections/Hero";
 import Philosophy from "../../components/sections/Philosophy";
 import About from "../../components/sections/About";
 import Work from "../../components/sections/Work";
+import Details from "../../components/sections/Details";
+import Workshop from "../../components/sections/Workshop";
 import Craft from "../../components/sections/Craft";
 import Contact from "../../components/sections/Contact";
 import DefaultFooter from "../../components/Footers/DefaultFooter";
+import CookieBanner from "../../components/ui/CookieBanner";
 
 export default function LandingPage() {
   return (
@@ -16,11 +19,14 @@ export default function LandingPage() {
         <Hero />
         <Philosophy />
         <About />
+        <Details />
         <Work />
+        <Workshop />
         <Craft />
         <Contact />
       </main>
       <DefaultFooter />
+      <CookieBanner />
     </>
   );
 }

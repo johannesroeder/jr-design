@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import DefaultFooter from "../../components/Footers/DefaultFooter";
+import CookieBanner from "../../components/ui/CookieBanner";
 import { useLanguage } from "../../context/LanguageContext";
 
 export default function PrivacyPolicy() {
@@ -114,6 +115,7 @@ export default function PrivacyPolicy() {
       </main>
 
       <DefaultFooter />
+      <CookieBanner />
     </div>
   );
 }
