@@ -8,6 +8,7 @@ import Workshop from "../../components/sections/Workshop";
 import Craft from "../../components/sections/Craft";
 import Contact from "../../components/sections/Contact";
 import DefaultFooter from "../../components/Footers/DefaultFooter";
+import CookieBanner from "../../components/ui/CookieBanner";
 
 export default function LandingPage() {
   return (
@@ -23,6 +24,7 @@ export default function LandingPage() {
         <Contact />
       </main>
       <DefaultFooter />
+      <CookieBanner />
     </>
   );
 }

@@ -52,6 +52,11 @@ const translations = {
       emailBtn: "Send an email",
       instagramBtn: "Instagram",
     },
+    cookieBanner: {
+      text: "This site uses browser storage to remember your language preference. We also load fonts from Google Fonts (your IP is shared with Google) and use Cloudflare Analytics (cookieless, privacy-preserving). No advertising or tracking cookies are used.",
+      learnMore: "Privacy Policy",
+      accept: "Understood",
+    },
     footer: {
       privacy: "Privacy Policy",
       instagram: "Instagram",
@@ -111,13 +116,13 @@ const translations = {
           body: "We do not share, sell, or transfer your personal data to third parties unless required to do so by law.",
         },
         cookies: {
-          title: "Cookies",
-          body: "Our website does not currently use cookies to track or store user data. If this changes in the future, we will update this Privacy Policy and request your consent.",
+          title: "Cookies &amp; Browser Storage",
+          body: "This website does not use advertising or tracking cookies. We do use browser localStorage for two purposes: to remember your chosen language (EN/NL) between visits, and to store your acknowledgement of this notice. Additionally, fonts are loaded from Google Fonts — this shares your IP address with Google as part of the font delivery. We use Cloudflare Web Analytics, a cookieless, privacy-preserving analytics tool that does not track individual users or store personal data.",
         },
         changes: {
           title: "Changes to This Policy",
           p1: 'We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated "Last Updated" date.',
-          p2: "By submitting the contact form on this website, you confirm that you have read and understood this Privacy Policy.",
+          p2: "By visiting this website, you confirm that you have read and understood this Privacy Policy.",
         },
       },
     },
@@ -175,6 +180,11 @@ const translations = {
       body: "Geïnteresseerd in een stuk, een opdracht, of gewoon even hallo zeggen? Neem rechtstreeks contact op — ik hoor graag van je.",
       emailBtn: "Stuur een mail",
       instagramBtn: "Instagram",
+    },
+    cookieBanner: {
+      text: "Deze site gebruikt browseropslag om uw taalvoorkeur te onthouden. We laden ook lettertypen van Google Fonts (uw IP-adres wordt gedeeld met Google) en gebruiken Cloudflare Analytics (cookieloos, privacyvriendelijk). Er worden geen reclame- of trackingcookies gebruikt.",
+      learnMore: "Privacybeleid",
+      accept: "Begrepen",
     },
     footer: {
       privacy: "Privacybeleid",
@@ -235,13 +245,13 @@ const translations = {
           body: "Wij delen, verkopen of overdragen uw persoonsgegevens niet aan derden, tenzij wettelijk verplicht.",
         },
         cookies: {
-          title: "Cookies",
-          body: "Onze website maakt momenteel geen gebruik van cookies om gebruikersgegevens bij te houden of op te slaan. Als dit in de toekomst verandert, zullen wij dit privacybeleid bijwerken en uw toestemming vragen.",
+          title: "Cookies &amp; Browseropslag",
+          body: "Deze website maakt geen gebruik van reclame- of trackingcookies. We gebruiken wel de browseropslag (localStorage) voor twee doeleinden: om uw gekozen taal (EN/NL) tussen bezoeken te onthouden, en om uw bevestiging van deze kennisgeving op te slaan. Lettertypen worden geladen via Google Fonts — hierbij wordt uw IP-adres gedeeld met Google als onderdeel van de lettertypelevering. We gebruiken Cloudflare Web Analytics, een cookieloos en privacyvriendelijk analyseplatform dat geen individuele gebruikers volgt of persoonlijke gegevens opslaat.",
         },
         changes: {
           title: "Wijzigingen aan Dit Beleid",
           p1: 'Wij kunnen dit privacybeleid van tijd tot tijd bijwerken. Wijzigingen worden op deze pagina gepubliceerd met een bijgewerkte datum "Laatst bijgewerkt".',
-          p2: "Door het contactformulier op deze website in te dienen, bevestigt u dat u dit privacybeleid heeft gelezen en begrepen.",
+          p2: "Door deze website te bezoeken, bevestigt u dat u dit privacybeleid heeft gelezen en begrepen.",
         },
       },
     },
