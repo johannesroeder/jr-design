@@ -13,14 +13,13 @@ export default function About() {
           {/* Left: stacked portrait + detail */}
           <AnimatedSection direction="right" className="flex flex-col gap-3">
             <img
-              src="/img/johannes-2.jpg"
-              alt="Johannes Roeder, founder of Atelier JR, in his workshop"
+              src="/img/johannes-side.jpg"
+              alt="Johannes Roeder, founder of Atelier JR"
               className="w-full rounded-lg object-cover aspect-[4/5] shadow-lg"
             />
-            {/* Secondary image — replace with your own workshop/detail photo */}
             <img
-              src="https://images.unsplash.com/photo-1497218770144-3fea6dbc33fe?auto=format&fit=crop&w=900&q=80"
-              alt="Workshop detail — replace with your own photo"
+              src="/img/johannes.jpg"
+              alt="Johannes Roeder at work in Atelier JR"
               className="w-full rounded-lg object-cover aspect-[16/7] shadow-md"
             />
           </AnimatedSection>

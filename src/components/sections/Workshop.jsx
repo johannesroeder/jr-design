@@ -5,16 +5,16 @@ import { motion, useInView } from "framer-motion";
 // Placeholder images from Unsplash — swap these src values for your own workshop photos
 const photos = [
   {
-    src: "https://images.unsplash.com/photo-1547609434-b732edfee020?auto=format&fit=crop&w=900&q=80",
-    alt: "Craftsman at work — replace with your own photo",
+    src: "/img/workshop.jpg",
+    alt: "The Atelier JR workshop — tool wall and workbench",
   },
   {
-    src: "https://images.unsplash.com/photo-1546964432-2ca7fcd08632?auto=format&fit=crop&w=900&q=80",
-    alt: "Workshop atmosphere — replace with your own photo",
+    src: "/img/me-working.jpg",
+    alt: "Johannes Roeder at work, chiselling a piece of wood",
   },
   {
-    src: "https://images.unsplash.com/photo-1687422810663-c316494f725a?auto=format&fit=crop&w=900&q=80",
-    alt: "Woodworking detail — replace with your own photo",
+    src: "/img/sharpening.jpg",
+    alt: "Johannes sharpening tools at the grinder",
   },
 ];
 
