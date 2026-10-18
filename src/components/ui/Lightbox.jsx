@@ -72,11 +72,6 @@ export default function Lightbox({ photos, index, onClose, onChange }) {
               alt={photo?.alt}
               className="max-h-[85vh] max-w-[88vw] object-contain"
             />
-            {photo?.alt && (
-              <p className="text-cream/80 text-xs tracking-widest uppercase text-center max-w-md drop-shadow-md">
-                {photo.alt}
-              </p>
-            )}
           </motion.div>
 
           {/* Next arrow */}
