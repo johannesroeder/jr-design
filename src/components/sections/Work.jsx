@@ -47,7 +47,7 @@ export default function Work() {
           <h2 className="font-serif text-dark text-4xl md:text-5xl font-normal">{t.work.title}</h2>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 grid-rows-3 gap-3 md:gap-4 auto-rows-[240px]">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 auto-rows-[240px]">
           {images.map((img, i) => (
             <WorkImage key={img.src} {...img} index={i} onOpen={setLightboxIndex} />
           ))}
