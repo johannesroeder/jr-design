@@ -34,7 +34,7 @@ export default function Work() {
   const images = [
     { src: "/img/table-bowl-vase.jpg", alt: t.work.alt.sideTable, className: "row-span-2", objectPosition: "top" },
     { src: "/img/bowl-ear.jpg",        alt: t.work.alt.bowl,      objectPosition: "60% center" },
-    { src: "/img/vase.jpg",            alt: t.work.alt.vase },
+    { src: "/img/ear-vase.jpg",         alt: t.work.alt.vase },
     { src: "/img/box-closeup.jpg",     alt: t.work.alt.box },
     { src: "/img/hang-lamp1.png",      alt: t.work.alt.lamp },
   ];

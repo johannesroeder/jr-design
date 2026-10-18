@@ -18,9 +18,9 @@ const translations = {
     about: {
       label: "The maker",
       yearsLabel: "Years of craft",
-      p1: "Born in Germany, Johannes moved to Antwerp to pursue his passion for fine woodworking and instrument building. Since then he has gathered extensive experience as a carpenter, furniture restorer, and guitar builder — always striving to push his boundaries.",
-      p2: "Through years of working alongside creative people, he developed a keen eye for shape and design — a constant hunt for inspiration and the next piece better than the last.",
-      p3: "Today, Atelier JR crafts unique handmade objects — lamps, vases, bowls — blending organic flowing shapes with modern geometric design, each made from locally sourced, sustainably harvested wood.",
+      p1: "Born in Germany, Johannes moved to Antwerp to pursue his passion for fine woodworking and instrument building. His craftsmanship was fundamentally shaped during his time as a furniture restorer in the ateliers of Axel Vervoordt — where he developed a keen eye for pure aesthetics, patina, and a deep respect for the soul of the material.",
+      p2: "Combined with the absolute precision demanded by guitar building, this gave rise to a unique design language: a constant search for the balance between technical mastery and natural imperfection.",
+      p3: "Today he works under the name Atelier JR, creating exclusive handmade objects and furniture — from sculptural vases and bowls to bespoke one-of-a-kind pieces. Organic, flowing forms meet restrained design. Each piece is crafted slowly and without compromise from locally sourced, sustainable wood. No mass production — just handwork with a story.",
     },
     work: {
       label: "Portfolio",
@@ -149,9 +149,9 @@ const translations = {
     about: {
       label: "De maker",
       yearsLabel: "Jaar vakmanschap",
-      p1: "Geboren in Duitsland, verhuisde Johannes naar Antwerpen om zijn passie voor fijn houtbewerking en instrumentbouw na te streven. Sindsdien heeft hij uitgebreide ervaring opgedaan als timmerman, meubelrestaurateur en gitaarbouwer — altijd op zoek naar nieuwe uitdagingen.",
-      p2: "Door jarenlang samen te werken met creatieve mensen, ontwikkelde hij een scherp oog voor vorm en design — een voortdurende zoektocht naar inspiratie en elk volgend stuk beter dan het vorige.",
-      p3: "Vandaag maakt Atelier JR unieke handgemaakte objecten — lampen, vazen, kommen — waarbij organische vloeiende vormen samengaan met modern geometrisch design, elk gemaakt van lokaal ingekocht, duurzaam hout.",
+      p1: "Geboren in Duitsland, verhuisde Johannes naar Antwerpen om zijn passie voor fijnhoutbewerking en instrumentbouw na te streven. Zijn vakmanschap werd fundamenteel gevormd tijdens zijn periode als meubelrestaurateur in de ateliers van Axel Vervoordt. Daar ontwikkelde hij een scherp oog voor pure esthetiek, patina en een diep respect voor de ziel van het materiaal.",
+      p2: "Gecombineerd met de absolute millimeterprecisie die vereist is als gitaarbouwer, leidde dit tot een unieke ontwerptaal. Een voortdurende zoektocht naar de balans tussen techniek en natuurlijke imperfectie.",
+      p3: "Vandaag creëert hij onder de naam Atelier JR exclusieve, handgemaakte objecten en meubilair — van sculpturale vazen en schalen tot unieke meubelstukken op maat. Hierbij gaan organische, vloeiende vormen hand in hand met ingetogen design. Elk stuk wordt traag en compromisloos vervaardigd uit lokaal, duurzaam hout. Geen massaproductie, maar handwerk met een verhaal.",
     },
     work: {
       label: "Portfolio",

@@ -33,13 +33,14 @@ export default function Lightbox({ photos, index, onClose, onChange }) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.25 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-dark/92 px-4"
+          className="fixed inset-0 z-50 flex items-center justify-center px-4"
+          style={{ backgroundColor: "rgba(28, 26, 23, 0.97)" }}
           onClick={onClose}
         >
           {/* Close */}
           <button
             onClick={onClose}
-            className="absolute top-5 right-6 text-cream/60 hover:text-cream text-3xl leading-none bg-transparent border-0 cursor-pointer font-sans z-10"
+            className="absolute top-5 right-6 text-cream/80 hover:text-cream text-3xl leading-none bg-transparent border-0 cursor-pointer font-sans z-10"
             aria-label="Close"
           >
             ×
@@ -49,7 +50,7 @@ export default function Lightbox({ photos, index, onClose, onChange }) {
           {total > 1 && (
             <button
               onClick={(e) => { e.stopPropagation(); prev(); }}
-              className="absolute left-4 md:left-8 text-cream/50 hover:text-cream text-4xl bg-transparent border-0 cursor-pointer font-sans z-10 select-none"
+              className="absolute left-4 md:left-8 text-cream/70 hover:text-cream text-4xl bg-transparent border-0 cursor-pointer font-sans z-10 select-none"
               aria-label="Previous photo"
             >
               ‹
@@ -71,18 +72,13 @@ export default function Lightbox({ photos, index, onClose, onChange }) {
               alt={photo?.alt}
               className="max-h-[85vh] max-w-[88vw] object-contain"
             />
-            {photo?.alt && (
-              <p className="text-cream/45 text-xs tracking-widest uppercase text-center max-w-md">
-                {photo.alt}
-              </p>
-            )}
           </motion.div>
 
           {/* Next arrow */}
           {total > 1 && (
             <button
               onClick={(e) => { e.stopPropagation(); next(); }}
-              className="absolute right-4 md:right-8 text-cream/50 hover:text-cream text-4xl bg-transparent border-0 cursor-pointer font-sans z-10 select-none"
+              className="absolute right-4 md:right-8 text-cream/70 hover:text-cream text-4xl bg-transparent border-0 cursor-pointer font-sans z-10 select-none"
               aria-label="Next photo"
             >
               ›
@@ -91,7 +87,7 @@ export default function Lightbox({ photos, index, onClose, onChange }) {
 
           {/* Counter */}
           {total > 1 && (
-            <p className="absolute bottom-5 text-cream/30 text-xs tracking-widest">
+            <p className="absolute bottom-5 text-cream/60 text-xs tracking-widest">
               {index + 1} / {total}
             </p>
           )}
