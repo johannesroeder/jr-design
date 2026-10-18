@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { useLanguage } from "../../context/LanguageContext";
 
-function WorkImage({ src, alt, className = "", index }) {
+function WorkImage({ src, alt, className = "", objectPosition = "center", index }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
 
@@ -18,6 +18,7 @@ function WorkImage({ src, alt, className = "", index }) {
         src={src}
         alt={alt}
         loading="lazy"
+        style={{ objectPosition }}
         className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
       />
     </motion.div>
@@ -28,8 +29,8 @@ export default function Work() {
   const { t } = useLanguage();
 
   const images = [
-    { src: "/img/table-bowl-vase.jpg", alt: t.work.alt.sideTable, className: "row-span-2" },
-    { src: "/img/bowl-ear.jpg",        alt: t.work.alt.bowl },
+    { src: "/img/table-bowl-vase.jpg", alt: t.work.alt.sideTable, className: "row-span-2", objectPosition: "top" },
+    { src: "/img/bowl-ear.jpg",        alt: t.work.alt.bowl,      objectPosition: "60% center" },
     { src: "/img/vase.jpg",            alt: t.work.alt.vase },
     { src: "/img/box-closeup.jpg",     alt: t.work.alt.box },
     { src: "/img/hang-lamp1.png",      alt: t.work.alt.lamp },
