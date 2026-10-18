@@ -42,7 +42,7 @@ const translations = {
       p1: "Every piece begins with carefully selected, sustainably harvested wood — locally sourced, so no tree is cut solely for production. From raw timber to finished object, each step is done by hand.",
       p2: "Collections are made in small batches, making each design as special as the wood it came from. Organic flowing shapes meet modern geometric precision — a dialogue between nature and intention.",
       quote:
-        '"I\'m on a constant hunt for inspiration and perfection. Always reflecting on previous attempts, I strive to make my next piece better than the last."',
+        '"My work is a search for absolute stillness in a restless world. Starting from a raw trunk, I work until I find the right proportion and texture — until the object simply feels right."',
       quoteAuthor: "— Johannes",
       imgAlt:
         "Johannes at the lathe, turning a piece of wood in his Antwerp workshop",
@@ -173,7 +173,7 @@ const translations = {
       p1: "Elk stuk begint met zorgvuldig geselecteerd, duurzaam geoogst hout — lokaal ingekocht, zodat er geen boom wordt gekapt louter voor de productie. Van ruw hout tot afgewerkt object, elke stap wordt met de hand gedaan.",
       p2: "Collecties worden in kleine oplages gemaakt, waardoor elk ontwerp even bijzonder is als het hout waaruit het voortkomt. Organische vloeiende vormen ontmoeten moderne geometrische precisie — een dialoog tussen natuur en intentie.",
       quote:
-        '"Ik ben voortdurend op zoek naar inspiratie en perfectie. Door te reflecteren op eerdere pogingen, streef ik ernaar mijn volgend stuk beter te maken dan het vorige."',
+        '"Mijn werk is een zoektocht naar absolute rust in een gejaagde wereld. Vanuit een ruwe stam zoek ik net zolang naar de juiste verhouding en textuur, totdat het object aanvoelt alsof het simpelweg klopt."',
       quoteAuthor: "— Johannes",
       imgAlt:
         "Johannes aan de draaibank, een stuk hout draaiend in zijn Antwerpse atelier",
