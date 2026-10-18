@@ -31,6 +31,8 @@ const translations = {
         candles: "Wooden candle holders by Atelier JR",
         box: "Handcrafted wooden box, detail shot by Atelier JR",
         candlesBox: "Wooden box with candles by Atelier JR",
+        bowl: "Turned walnut bowl with ear detail by Atelier JR",
+        sideTable: "Side table with organic shapes by Atelier JR"
       },
     },
     craft: {
@@ -160,6 +162,8 @@ const translations = {
         candles: "Houten kaarsenhouders van Atelier JR",
         box: "Ambachtelijke houten doos, detailopname van Atelier JR",
         candlesBox: "Houten doos met kaarsen van Atelier JR",
+        bowl: "Gedraaide walnoten schaal met oordetail van Atelier JR",
+        sideTable: "Bijzet tafel met organische vorm van Atelier JR"
       },
     },
     craft: {

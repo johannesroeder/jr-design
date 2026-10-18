@@ -28,11 +28,11 @@ export default function Work() {
   const { t } = useLanguage();
 
   const images = [
-    { src: "/img/hang-lamp1.png", alt: t.work.alt.lamp, className: "row-span-2" },
-    { src: "/img/vase.jpg",        alt: t.work.alt.vase },
-    { src: "/img/candles.jpg",     alt: t.work.alt.candles },
-    { src: "/img/box-closeup.jpg", alt: t.work.alt.box },
-    { src: "/img/candles-box.jpg", alt: t.work.alt.candlesBox },
+    { src: "/img/table-bowl-vase.jpg", alt: t.work.alt.sideTable, className: "row-span-2" },
+    { src: "/img/bowl-ear.jpg",        alt: t.work.alt.bowl },
+    { src: "/img/vase.jpg",            alt: t.work.alt.vase },
+    { src: "/img/box-closeup.jpg",     alt: t.work.alt.box },
+    { src: "/img/hang-lamp1.png",      alt: t.work.alt.lamp },
   ];
 
   return (

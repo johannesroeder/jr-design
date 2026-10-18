@@ -2,11 +2,11 @@ import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const photos = [
-  { src: "/img/chisel.jpg", alt: "Two chisels resting on the workbench" },
-  { src: "/img/plane.jpg", alt: "Close-up of a vintage hand plane" },
-  { src: "/img/workinprogress.jpg", alt: "Work in progress — chisel marks in wood" },
-  { src: "/img/wood.jpg", alt: "Raw wood blanks and a turned bowl on the shelf" },
-  { src: "/img/saw.jpg", alt: "Table saw blade in the workshop" },
+  { src: "/img/chisel.jpg",    alt: "Two chisels resting on the workbench" },
+  { src: "/img/plane.jpg",     alt: "Close-up of a vintage hand plane" },
+  { src: "/img/joinery.jpg",   alt: "Decorative ebony peg in a table leg joint" },
+  { src: "/img/side-table.jpg", alt: "Corner detail of the handmade side table" },
+  { src: "/img/saw.jpg",       alt: "Table saw blade in the workshop" },
 ];
 
 function DetailPhoto({ src, alt, index }) {
