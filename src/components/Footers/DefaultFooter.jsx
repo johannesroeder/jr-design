@@ -19,7 +19,7 @@ export default function DefaultFooter() {
         <img
           src={logoSrc}
           alt="Gecertificeerd Vakman — Certified Craftsman"
-          className="h-10 w-auto opacity-70 mix-blend-screen"
+          className="h-10 w-auto"
         />
 
         <div className="flex items-center gap-6">
