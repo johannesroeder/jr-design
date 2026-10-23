@@ -11,11 +11,11 @@ export default function DefaultFooter() {
   return (
     <footer className="bg-dark px-6">
       {/* Partner / accreditation bar */}
-      <div className="max-w-6xl mx-auto py-8 flex items-center justify-center gap-8 border-b border-cream/10">
+      <div className="bg-cream -mx-6 px-6 py-8 flex items-center justify-center gap-8">
         <img
           src={logoSrc}
           alt="Gecertificeerd Vakman — Certified Craftsman"
-          className="h-12 w-auto"
+          className="h-16 w-auto"
         />
       </div>
 
