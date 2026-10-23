@@ -9,18 +9,22 @@ export default function DefaultFooter() {
   const logoSrc = `/img/certified-craft-logo-${lang}.jpg`;
 
   return (
-    <footer className="bg-dark py-10 px-6">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+    <footer className="bg-dark px-6">
+      {/* Partner / accreditation bar */}
+      <div className="max-w-6xl mx-auto py-8 flex items-center justify-center gap-8 border-b border-cream/10">
+        <img
+          src={logoSrc}
+          alt="Gecertificeerd Vakman — Certified Craftsman"
+          className="h-12 w-auto"
+        />
+      </div>
+
+      {/* Main footer row */}
+      <div className="max-w-6xl mx-auto py-8 flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
           <p className="text-cream/40 text-xs tracking-wide">© {year} Atelier JR</p>
           <p className="text-cream/25 text-xs tracking-wide">BTW BE0555800496</p>
         </div>
-
-        <img
-          src={logoSrc}
-          alt="Gecertificeerd Vakman — Certified Craftsman"
-          className="h-10 w-auto"
-        />
 
         <div className="flex items-center gap-6">
           <button
